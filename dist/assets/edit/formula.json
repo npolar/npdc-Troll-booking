@@ -1,0 +1,106 @@
+{
+  "fieldsets": [{
+    "title": "Base",
+    "fields": [
+       "research_type",
+       "research_disciplines",
+        {
+        "id": "summary",
+        "title": "summary",
+        "type": "textarea"
+        },
+      "location",
+      {
+        "id": "start_date",
+        "title": "start date"
+        },
+        {
+        "id": "end_date",
+        "title": "end date"
+        }
+    ]
+  },
+  {
+    "title": "Needs",
+    "fields": [{
+        "id": "personnel_needs",
+        "title": "personnel needs",
+        "type": "textarea"
+        },
+        {
+        "id": "material_needs",
+        "title": "material needs",
+        "type": "textarea"
+        }
+    ]
+  },
+
+  {
+    "title": "Links",
+    "fields": [{
+      "id": "links",
+      "fields": [{
+          "id": "rel",
+          "title": "relation to Troll booking",
+          "enum": ["related",
+            "service",
+            "metadata",
+            "project",
+            "publication",
+            "datacentre",
+            "data"
+          ]
+        }, {
+          "id": "href",
+          "title": "link"
+        },
+        "!hreflang",
+        "!accessed",
+        "!length",
+        "!etag", {
+          "id": "type",
+          "title": "type",
+          "autocomplete": true
+        },
+        "!modified"
+      ]
+    }]
+  }, {
+    "title": "People",
+    "fields": [{
+      "id": "people",
+      "fields": [{
+          "id": "first_name",
+          "title": "first name"
+        }, {
+          "id": "last_name",
+          "title": "last name"
+        },
+        "!id"
+      ]
+    }]
+  },
+  {
+    "title": "Edits",
+    "fields": [
+     "comment",
+     {
+        "id": "changes",
+        "title": "changes for major updates"
+     },
+     {
+        "id": "created",
+        "disabled": true
+      }, {
+        "id": "created_by",
+        "disabled": true
+      }, {
+        "id": "updated",
+        "disabled": true
+      }, {
+        "id": "updated_by",
+        "disabled": true
+      }
+    ]
+  }]
+}

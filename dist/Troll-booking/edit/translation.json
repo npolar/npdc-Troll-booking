@@ -1,0 +1,60 @@
+{
+	"iso639-3": "eng",
+
+
+	"fields": {
+		"research_type": {
+			"title": "Project, monitoring or not research?",
+			"values": [
+				"research monitoring",
+				"research project",
+				"not research"
+			]
+		},
+		"research_disciplines": {
+			"title": "Project, monitoring or not research?",
+			"values": [
+				"atmosphere",
+				"marine biology",
+	            "terrestrial biology",
+	            "cryosphere",
+	            "geology",
+	            "oceanography",
+	            "social sciences",
+	            "space physics",
+	            "technology and engineering",
+	            "other"
+				]
+		},
+		"people": {
+			"title": "people",
+			"description": "people",
+			"fields": {
+				"roles": {
+					"title": "roles",
+					"values": [
+					    "carpenter",
+		                "chef",
+		                "electrician",
+		                "expedition leader",
+		                "field assistant",
+		                "field responsible",
+		                "fire security",
+		                "investigator",
+		                "it",
+		                "mecanic",
+		                "mecanic fire engine",
+		                "mecanic_taf",
+		                "operator 60 tons",
+		                "other",
+		                "physician",
+		                "research technician",
+		                "security",
+		                "service technician",
+		                "transport"
+			       ]
+				}
+			}
+		}
+	}
+}
