@@ -12,7 +12,7 @@
 			]
 		},
 		"research_disciplines": {
-			"title": "Project, monitoring or not research?",
+			"title": "Field of research",
 			"values": [
 				"atmosphere",
 				"marine biology",

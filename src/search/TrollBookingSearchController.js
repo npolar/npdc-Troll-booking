@@ -11,7 +11,7 @@ var TrollBookingSearchController = function ($scope, $location, $controller, Tro
   };
 
   let query = function() {
-    let defaults = { limit: "50", sort: "-updated,-released", fields: 'title,id,collection,updated,released', facets: "topics", score: true };
+    let defaults = { limit: "50", sort: "-updated,-released", fields: 'research_type,research_project,updated', facets: "research_type,research_project", score: true };
     let invariants = $scope.security.isAuthenticated() ? {} : { "not-draft": "yes", "not-progress": "planned", "filter-links.rel": "data" };
     return Object.assign({}, defaults, invariants);
   };

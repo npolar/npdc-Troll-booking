@@ -1,2 +1,2 @@
 # npdc-Troll-booking
-Booking system for the Troll research station in Antarctica
+Statistics for all persons booked into Troll and Norwegia research station in Antarctica.

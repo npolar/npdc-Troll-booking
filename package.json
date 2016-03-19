@@ -1,7 +1,7 @@
 {
-  "name": "npdc-Troll-booking",
+  "name": "npdc-station-booking",
   "version": "1.0.1",
-  "description": "Troll booking app",
+  "description": "Stats app for booked guests at Troll/Norwegia",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "author": "npolar",
   "license": "MIT",
   "private": true,
-  "repository": "https://github.com/npolar/npdc-Troll-booking",
+  "repository": "https://github.com/npolar/npdc-station-booking",
   "dependencies": {
     "angular": "^1.4.9",
     "npdc-common": "npolar/npdc-common"

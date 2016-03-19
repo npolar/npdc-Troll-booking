@@ -18,9 +18,6 @@ npdcTrollBookingApp.directive('dataCoverage', require('./edit/coverage/coverageD
 var resources = [
   {'path': '/', 'resource': 'NpolarApi'},
   {'path': '/user', 'resource': 'User'},
-  {'path': '/dataset', 'resource': 'Dataset' },
-  {'path': '/publication', 'resource': 'Publication' },
-  {'path': '/project', 'resource': 'Project' },
    {'path': '/troll-booking', 'resource': 'TrollBooking' }
 
 ];
@@ -42,6 +39,7 @@ npdcTrollBookingApp.config($httpProvider => {
 
 // Inject npolarApiConfig and run
 npdcTrollBookingApp.run(($http, npolarApiConfig, npdcAppConfig, NpolarTranslate, NpolarLang) => {
+  console.log(environment);
   var autoconfig = new AutoConfig(environment);
   angular.extend(npolarApiConfig, autoconfig, { resources });
 
