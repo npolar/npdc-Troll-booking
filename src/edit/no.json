@@ -1,62 +1,44 @@
 {
   "fieldsets" : [
-    "Datasett",
-    "Data",
-    "Klassifisering",
+    "Base",
+    "Forskning",
+     "Personer",
     "Lenker",
-    "Dekning",
-    "Personer",
-    "Organisasjoner",
     "Endringer"
   ],
   "fields": {
-    "title": {
-      "title": "tittel"
+    "research_station": {
+      "title": "forskningsstasjon",
+       "values": [
+        "Troll",
+        "Norwegia"
+      ]
+
     },
-    "summary": {
-      "title": "sammendrag"
-    },
-    "progress": {
-      "title": "status",
+    "research_type": {
+      "title": "arbeidsoppgaver",
       "values": [
-        "pågår",
-        "fullført",
-        "planlagt"
+        "forskningsmonitorering",
+        "forskningsprosjekt",
+        "logistikk operasjoner",
+        "VIP",
+        "annet"
       ]
     },
-    "draft": {
-      "title": "utkast",
-      "values": [
-        "ja",
-        "nei"
-      ]
+     "summary": {
+      "title": "beskrivelse"
     },
-    "released": {
-      "title": "utgivelsesdato"
+     "research_project": {
+      "title": "tittel på forskningsprosjekt"
     },
-    "licences": {
-      "title": "lisenser",
-      "items": {
-        "title": "lisens"
-      }
-    },
-    "rights": {
-      "title": "rettigheter"
-    },
-    "restrictions": {
-      "title": "restriksjoner"
-    },
-    "quality": {
-      "title": "data kvalitet"
-    },
-    "citation": {
-      "title": "sitering"
-    },
-    "topics": {
+     "topics": {
       "title": "emner",
       "values": [
+        "forsuring",
         "atmosfære",
         "biologi",
+        "biokjemi",
+        "biodiversitet",
         "kjemi",
         "klima",
         "konservering",
@@ -64,132 +46,47 @@
         "økotoksikologi",
         "miljø",
         "geologi",
+        "geofysikk",
         "glasiologi",
+        "historie",
+        "menneskelige perspektiver",
         "ledelse",
         "marine",
+        "marine økosystemer",
         "kart",
         "oseanografi",
         "annet",
+        "paleoklima",
         "fjernmåling",
         "havis",
+        "snø",
         "terrestrisk",
         "topografi",
         "vegetasjon"
       ]
     },
-    "sets": {
-      "title": "sett"
-    },
-    "iso_topics": {
-      "title": "ISO kategori",
-      "values": [
-        "biota",
-        "boundaries",
-        "climatology/meterology/atmosphere",
-        "economy",
-        "elevation",
-        "environment",
-        "farming",
-        "geoscientific information",
-        "health",
-        "imagery/base maps/earth cover",
-        "inland/waters",
-        "intelligence/military",
-        "location",
-        "oceans",
-        "planning/cadastre",
-        "society",
-        "structure",
-        "transportation",
-        "utilities/communication"
-      ]
-    },
-    "gcmd": {
-      "fields": {
-        "sciencekeywords": {
-          "title": "GCMD søkeord",
-          "items": {
-            "fields": {
-              "Category": {
-                "title": "kategori"
-              },
-              "Topic": {
-                "title": "enme"
-              },
-              "Term": {
-                "title": "begrep"
-              },
-              "Variable_Level_1": {
-                "title": "variabel nivå 1"
-              },
-              "Variable_Level_2": {
-                "title": "variabel nivå 2"
-              },
-              "Variable_Level_3": {
-                "title": "variabel nivå 3"
-              },
-              "Detailed_Variable": {
-                "title": "detaljert variabel"
-              }
-            }
-          }
-        }
-      }
+    "released": {
+      "title": "utgivelsesdato"
     },
     "links": {
       "title": "lenker",
       "items": {
         "fields": {
           "rel": {
-            "title": "relasjon"
+            "title": "relasjon",
+            "values": [
+              "relatert",
+              "service",
+              "metadata",
+              "prosjekt",
+              "publikasjon",
+              "datacenter",
+              "intern",
+              "data"
+              ]
           },
           "title": {
             "title": "tittel"
-          }
-        }
-      }
-    },
-    "activity": {
-      "title": "datainnsamling periode",
-      "items": {
-        "fields": {
-          "stop": {
-            "title": "stopp"
-          }
-        }
-      }
-    },
-    "coverage": {
-      "title": "dekning",
-      "items": {
-        "fields": {
-          "north": {
-            "title": "nord"
-          },
-          "east": {
-            "title": "øst"
-          },
-          "south": {
-            "title": "sør"
-          },
-          "west": {
-            "title": "vest"
-          }
-        }
-      }
-    },
-    "placenames": {
-      "title": "stedsnavn",
-      "items": {
-        "fields": {
-          "placename": {
-            "title": "stedsnavn"
-          },
-          "area": {
-            "title": "område"
-          },
-          "country": {
-            "title": "land"
           }
         }
       }
@@ -204,52 +101,38 @@
           "last_name": {
             "title": "etternavn"
           },
-          "email": {
-            "title": "e-post"
+          "number_of_persons": {
+            "title": "antall personer"
           },
           "roles": {
             "title": "roller",
             "values": [
-              "forfatter",
-              "prosjektleder",
-              "prosessor",
-              "kontaktperson",
-              "redaktør"
+              "snekker",
+              "kokk",
+              "elektriker",
+               "ekspedisjonsleder",
+               "feltassistent",
+               "felt ansvarlig",
+                "forsker",
+                "IT",
+                "KSAT",
+                "mekaniker",
+                "mekaniker TAF",
+                "annet",
+                "lege",
+                "pilot",
+                "forskningstekniker",
+                "sikkerhetsansvarlig",
+                "servicetekniker",
+                "transport",
+                "VIP"
             ]
           },
-          "homepage": {
-            "title": "nettsted"
-          }
-        }
-      }
-    },
-    "organisations": {
-      "title": "organisasjoner",
-      "items": {
-        "fields": {
-          "name": {
-            "title": "navn"
+          "organisation": {
+            "title": "organisasjon"
           },
-          "gcmd_short_name": {
-            "title": "GCMD navn"
-          },
-          "roles": {
-            "title": "roller",
-            "values": [
-              "forfatter",
-              "opphavsperson",
-              "eier",
-              "kontaktperson",
-              "forlegger",
-              "prosjektleder",
-              "ressurs leverandør"
-            ]
-          },
-          "email": {
-            "title": "e-post"
-          },
-          "homepage": {
-            "title": "nettsted"
+          "country":{
+            "title": "land"
           }
         }
       }
@@ -270,7 +153,7 @@
       "title": "kommentar"
     },
     "changes": {
-      "title": "kommentarer til store endringer",
+      "title": "kommentarer til større endringer",
       "items": {
         "fields": {
           "datetime": {

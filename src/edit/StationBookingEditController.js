@@ -27,12 +27,6 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
     }, {
       match: "sciencekeywords_item",
       template: '<npdc:formula-gcmd-keyword></npdc:formula-gcmd-keyword>'
-    }, {
-      match: "coverage_item",
-      template: "<dataset:coverage></dataset:coverage>"
-    }, {
-      match: "placenames_item",
-      template: '<npdc:formula-placename></npdc:formula-placename>'
     }
   ]),
     languages: npdcAppConfig.formula.languages.concat([{

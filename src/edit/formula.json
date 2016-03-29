@@ -1,58 +1,63 @@
 {
   "fieldsets": [{
-    "title": "Dataset",
+    "title": "Core",
     "fields": [{
-        "id": "title"
-      }, {
-        "id": "summary",
-        "title": "summary",
-        "type": "textarea"
+        "id": "research_station",
+         "title": "research station"
       },
-      "progress",
-      "draft"
-    ]
-  }, {
-    "title": "Data",
+      {
+        "id": "research_type",
+         "title": "work tasks"
+      },
+      "summary"]
+      },
+      {
+    "title": "Research",
     "fields": [{
-        "id": "released",
-        "title": "release date"
-      }, {
-        "id": "licences",
-        "title": "chose a licence"
+        "id": "research_project",
+         "title": "research project title"
       },
-      "rights",
-      "restrictions", {
-        "id": "quality",
-        "title": "data quality"
-      },
-      "citation"
-    ]
-  }, {
-    "title": "Classification",
-    "fields": [
-      "topics",
-      "iso_topics",
-      "sets",
-      "tags",
-      "gcmd"
-    ]
-  }, {
+      "topics"
+      ]},
+  {
+    "title": "People",
+    "fields": [{
+      "id": "people",
+      "items": {
+        "fields": [
+          "!id",
+          {
+            "id": "first_name",
+            "title": "first name",
+            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array"
+          }, {
+            "id": "last_name",
+            "title": "last name",
+            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array"
+          },
+          "organisation",
+          "country",
+          "roles",
+           "number_of_persons"
+        ]
+      }
+    }]
+  },
+     {
     "title": "Links",
     "fields": [{
       "id": "links",
       "items": {
         "fields": [{
             "id": "rel",
-            "title": "relation to dataset",
+            "title": "relation to booking",
             "enum": ["related",
               "service",
               "metadata",
               "project",
               "publication",
               "datacentre",
-              "parent",
               "internal",
-              "doi",
               "data"
             ]
           }, {
@@ -62,57 +67,14 @@
           "!hreflang",
           "!acccessed",
           "!length",
-          "!etag", {
-            "id": "type",
-            "title": "type",
-            "autocomplete": true
-          },
+          "!type",
+          "!etag",
           "!modified"
         ]
       }
     }]
-  }, {
-    "title": "Coverage",
-    "fields": [{
-        "id": "activity",
-        "title": "data collection period"
-      },
-      "coverage",
-      "placenames"
-    ]
-  }, {
-    "title": "People",
-    "fields": [{
-      "id": "people",
-      "items": {
-        "fields": [{
-            "id": "first_name",
-            "title": "first name"
-          }, {
-            "id": "last_name",
-            "title": "last name"
-          },
-          "!id"
-        ]
-      }
-    }]
-  }, {
-    "title": "Organisations",
-    "fields": [{
-      "id": "organisations",
-      "items": {
-        "fields": [
-          "!id",
-          "email", {
-            "id": "gcmd_short_name",
-            "title": "GCMD short name"
-          },
-          "roles",
-          "homepage"
-        ]
-      }
-    }]
-  }, {
+  },
+  {
     "title": "Edits",
     "fields": [{
         "id": "created",
@@ -127,9 +89,9 @@
         "id": "updated_by",
         "disabled": true
       },
-      "comment", {
-        "id": "changes",
-        "title": "changes for major updates"
+       {
+        "id": "comment",
+        "title": "comments for major updates"
       }
     ]
   }]

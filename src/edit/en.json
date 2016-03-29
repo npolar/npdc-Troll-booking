@@ -1,27 +1,54 @@
 {
   "fields": {
-    "iso_topics": {
-      "title": "ISO topics category",
+     "research_station": {
+       "title": "research station",
+       "values": [
+              "Troll",
+              "Norwegia"
+       ]
+     },
+     "research_type": {
+       "title": "type of research",
+       "values": [
+              "research monitoring",
+              "research project",
+              "logistic operations",
+              "VIP",
+              "other"
+       ]
+     },
+     "topics": {
+      "title": "topics",
       "values": [
-        "biota",
-        "boundaries",
-        "climatology/meterology/atmosphere",
-        "economy",
-        "elevation",
-        "environment",
-        "farming",
-        "geoscientific information",
-        "health",
-        "imagery/base maps/earth cover",
-        "inland/waters",
-        "intelligence/military",
-        "location",
-        "oceans",
-        "planning/cadastre",
-        "society",
-        "structure",
-        "transportation",
-        "utilities/communication"
+              "acidification",
+              "atmosphere",
+              "biology",
+              "biochemistry",
+              "biodiversity",
+              "chemistry",
+              "climate",
+              "conservation",
+              "ecology",
+              "ecotoxicology",
+              "environment",
+              "geology",
+              "geophysics",
+              "glaciology",
+              "history",
+              "human dimension",
+              "management",
+              "marine",
+              "marineecosystems",
+              "maps",
+              "oceanography",
+              "other",
+              "paleoclimate",
+              "remote sensing",
+              "seaice",
+              "snow",
+              "terrestrial",
+              "topography",
+              "vegetation"
       ]
     },
     "people": {
@@ -29,28 +56,25 @@
         "fields": {
           "roles": {
             "values": [
-              "author",
-              "principal investigator",
-              "processor",
-              "point of contact",
-              "editor"
-            ]
-          }
-        }
-      }
-    },
-    "organisations": {
-      "items": {
-        "fields": {
-          "roles": {
-            "values": [
-              "author",
-              "originator",
-              "owner",
-              "point of contact",
-              "publisher",
-              "principal investigator",
-              "resource provider"
+              "carpenter",
+              "chef",
+              "electrician",
+              "expedition leader",
+              "field assistant",
+              "field responsible",
+              "investigator",
+              "IT",
+              "KSAT",
+              "mecanic",
+              "mecanic TAF",
+              "other",
+              "physician",
+              "pilot",
+              "research technitian",
+              "security",
+              "service technitian",
+              "transport",
+              "VIP"
             ]
           }
         }
