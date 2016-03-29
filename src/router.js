@@ -6,7 +6,7 @@ var router = function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true).hashPrefix('!');
 
   $routeProvider.when('/:id', {
-    templateUrl: 'show/show-troll-booking.html',
+    templateUrl: 'show/show-station-booking.html',
     controller: 'StationBookingShowController'
   }).when('/:id/edit', {
     template: '<npdc:formula></npdc:formula>',

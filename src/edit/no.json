@@ -1,0 +1,295 @@
+{
+  "fieldsets" : [
+    "Datasett",
+    "Data",
+    "Klassifisering",
+    "Lenker",
+    "Dekning",
+    "Personer",
+    "Organisasjoner",
+    "Endringer"
+  ],
+  "fields": {
+    "title": {
+      "title": "tittel"
+    },
+    "summary": {
+      "title": "sammendrag"
+    },
+    "progress": {
+      "title": "status",
+      "values": [
+        "pågår",
+        "fullført",
+        "planlagt"
+      ]
+    },
+    "draft": {
+      "title": "utkast",
+      "values": [
+        "ja",
+        "nei"
+      ]
+    },
+    "released": {
+      "title": "utgivelsesdato"
+    },
+    "licences": {
+      "title": "lisenser",
+      "items": {
+        "title": "lisens"
+      }
+    },
+    "rights": {
+      "title": "rettigheter"
+    },
+    "restrictions": {
+      "title": "restriksjoner"
+    },
+    "quality": {
+      "title": "data kvalitet"
+    },
+    "citation": {
+      "title": "sitering"
+    },
+    "topics": {
+      "title": "emner",
+      "values": [
+        "atmosfære",
+        "biologi",
+        "kjemi",
+        "klima",
+        "konservering",
+        "økologi",
+        "økotoksikologi",
+        "miljø",
+        "geologi",
+        "glasiologi",
+        "ledelse",
+        "marine",
+        "kart",
+        "oseanografi",
+        "annet",
+        "fjernmåling",
+        "havis",
+        "terrestrisk",
+        "topografi",
+        "vegetasjon"
+      ]
+    },
+    "sets": {
+      "title": "sett"
+    },
+    "iso_topics": {
+      "title": "ISO kategori",
+      "values": [
+        "biota",
+        "boundaries",
+        "climatology/meterology/atmosphere",
+        "economy",
+        "elevation",
+        "environment",
+        "farming",
+        "geoscientific information",
+        "health",
+        "imagery/base maps/earth cover",
+        "inland/waters",
+        "intelligence/military",
+        "location",
+        "oceans",
+        "planning/cadastre",
+        "society",
+        "structure",
+        "transportation",
+        "utilities/communication"
+      ]
+    },
+    "gcmd": {
+      "fields": {
+        "sciencekeywords": {
+          "title": "GCMD søkeord",
+          "items": {
+            "fields": {
+              "Category": {
+                "title": "kategori"
+              },
+              "Topic": {
+                "title": "enme"
+              },
+              "Term": {
+                "title": "begrep"
+              },
+              "Variable_Level_1": {
+                "title": "variabel nivå 1"
+              },
+              "Variable_Level_2": {
+                "title": "variabel nivå 2"
+              },
+              "Variable_Level_3": {
+                "title": "variabel nivå 3"
+              },
+              "Detailed_Variable": {
+                "title": "detaljert variabel"
+              }
+            }
+          }
+        }
+      }
+    },
+    "links": {
+      "title": "lenker",
+      "items": {
+        "fields": {
+          "rel": {
+            "title": "relasjon"
+          },
+          "title": {
+            "title": "tittel"
+          }
+        }
+      }
+    },
+    "activity": {
+      "title": "datainnsamling periode",
+      "items": {
+        "fields": {
+          "stop": {
+            "title": "stopp"
+          }
+        }
+      }
+    },
+    "coverage": {
+      "title": "dekning",
+      "items": {
+        "fields": {
+          "north": {
+            "title": "nord"
+          },
+          "east": {
+            "title": "øst"
+          },
+          "south": {
+            "title": "sør"
+          },
+          "west": {
+            "title": "vest"
+          }
+        }
+      }
+    },
+    "placenames": {
+      "title": "stedsnavn",
+      "items": {
+        "fields": {
+          "placename": {
+            "title": "stedsnavn"
+          },
+          "area": {
+            "title": "område"
+          },
+          "country": {
+            "title": "land"
+          }
+        }
+      }
+    },
+    "people": {
+      "title": "personer",
+      "items": {
+        "fields": {
+          "first_name": {
+            "title": "fornavn"
+          },
+          "last_name": {
+            "title": "etternavn"
+          },
+          "email": {
+            "title": "e-post"
+          },
+          "roles": {
+            "title": "roller",
+            "values": [
+              "forfatter",
+              "prosjektleder",
+              "prosessor",
+              "kontaktperson",
+              "redaktør"
+            ]
+          },
+          "homepage": {
+            "title": "nettsted"
+          }
+        }
+      }
+    },
+    "organisations": {
+      "title": "organisasjoner",
+      "items": {
+        "fields": {
+          "name": {
+            "title": "navn"
+          },
+          "gcmd_short_name": {
+            "title": "GCMD navn"
+          },
+          "roles": {
+            "title": "roller",
+            "values": [
+              "forfatter",
+              "opphavsperson",
+              "eier",
+              "kontaktperson",
+              "forlegger",
+              "prosjektleder",
+              "ressurs leverandør"
+            ]
+          },
+          "email": {
+            "title": "e-post"
+          },
+          "homepage": {
+            "title": "nettsted"
+          }
+        }
+      }
+    },
+    "created": {
+      "title": "opprettet"
+    },
+    "created_by": {
+      "title": "opprettet av"
+    },
+    "updated": {
+      "title": "oppdatert"
+    },
+    "updated_by": {
+      "title": "oppdatert av"
+    },
+    "comment": {
+      "title": "kommentar"
+    },
+    "changes": {
+      "title": "kommentarer til store endringer",
+      "items": {
+        "fields": {
+          "datetime": {
+            "title": "dato"
+          },
+          "name": {
+            "title": "navn"
+          },
+          "email": {
+            "title": "e-post"
+          },
+          "comment": {
+            "title": "kommentar"
+            },
+          "rev": {
+            "title": "revisjon"
+          }
+        }
+      }
+    }
+  }
+}

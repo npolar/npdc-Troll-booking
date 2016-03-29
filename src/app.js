@@ -1,6 +1,4 @@
 'use strict';
-
-var environment = require('../environment');
 var npdcCommon = require('npdc-common');
 var AutoConfig = npdcCommon.AutoConfig;
 
@@ -12,13 +10,13 @@ var npdcStationBookingApp = angular.module('npdcStationBookingApp', ['npdcCommon
 npdcStationBookingApp.controller('StationBookingShowController', require('./show/StationBookingShowController'));
 npdcStationBookingApp.controller('StationBookingSearchController', require('./search/StationBookingSearchController'));
 npdcStationBookingApp.controller('StationBookingEditController', require('./edit/StationBookingEditController'));
-npdcStationBookingApp.directive('dataCoverage', require('./edit/coverage/coverageDirective'));
+//npdcStationBookingApp.directive('datasetCoverage', require('./edit/coverage/coverageDirective'));
 
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
   {'path': '/', 'resource': 'NpolarApi'},
   {'path': '/user', 'resource': 'User'},
-   {'path': '/station-booking', 'resource': 'StationBooking' }
+  {'path': '/station-booking', 'resource': 'StationBooking' }
 
 ];
 
@@ -32,24 +30,15 @@ resources.forEach(service => {
 // Routing
 npdcStationBookingApp.config(require('./router'));
 
-// API HTTP interceptor
-npdcStationBookingApp.config($httpProvider => {
+npdcStationBookingApp.config(($httpProvider, npolarApiConfig) => {
+  var autoconfig = new AutoConfig("production");
+  angular.extend(npolarApiConfig, autoconfig, { resources });
+  console.debug("npolarApiConfig", npolarApiConfig);
+
   $httpProvider.interceptors.push('npolarApiInterceptor');
 });
 
-// Inject npolarApiConfig and run
-npdcStationBookingApp.run(($http, npolarApiConfig, npdcAppConfig, NpolarTranslate, NpolarLang) => {
-  console.log(environment);
-  console.log("-------------------------");
-  var autoconfig = new AutoConfig(environment);
-  angular.extend(npolarApiConfig, autoconfig, { resources });
-
-  // i18n
-  $http.get('//api.npolar.no/text/?q=&filter-bundle=npdc-station-booking&format=json&variant=array&limit=all').then(response => {
-    NpolarTranslate.appendToDictionary(response.data);
-    NpolarLang.setLanguages(npdcAppConfig.i18n.languages);
-  });
-
+npdcStationBookingApp.run(($http, npdcAppConfig, NpolarTranslate, NpolarLang) => {
+  NpolarTranslate.loadBundles('npdc-station-booking');
   npdcAppConfig.toolbarTitle = 'Station booking statistics';
-  console.debug("npolarApiConfig", npolarApiConfig);
 });

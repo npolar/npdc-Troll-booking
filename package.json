@@ -1,7 +1,7 @@
 {
   "name": "npdc-station-booking",
   "version": "1.0.1",
-  "description": "Stats app for booked guests at Troll/Norwegia",
+  "description": "NPDC station booking statistics",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

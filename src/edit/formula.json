@@ -1,94 +1,120 @@
 {
   "fieldsets": [{
-    "title": "Base",
-    "fields": [
-       "research_type",
-       "research_disciplines",
-        {
+    "title": "Dataset",
+    "fields": [{
+        "id": "title"
+      }, {
         "id": "summary",
         "title": "summary",
         "type": "textarea"
-        },
-      "location",
-      {
-        "id": "start_date",
-        "title": "start date"
-        },
-        {
-        "id": "end_date",
-        "title": "end date"
-        }
+      },
+      "progress",
+      "draft"
     ]
-  },
-  {
-    "title": "Needs",
+  }, {
+    "title": "Data",
     "fields": [{
-        "id": "personnel_needs",
-        "title": "personnel needs",
-        "type": "textarea"
-        },
-        {
-        "id": "material_needs",
-        "title": "material needs",
-        "type": "textarea"
-        }
+        "id": "released",
+        "title": "release date"
+      }, {
+        "id": "licences",
+        "title": "chose a licence"
+      },
+      "rights",
+      "restrictions", {
+        "id": "quality",
+        "title": "data quality"
+      },
+      "citation"
     ]
-  },
-
-  {
+  }, {
+    "title": "Classification",
+    "fields": [
+      "topics",
+      "iso_topics",
+      "sets",
+      "tags",
+      "gcmd"
+    ]
+  }, {
     "title": "Links",
     "fields": [{
       "id": "links",
-      "fields": [{
-          "id": "rel",
-          "title": "relation to station booking",
-          "enum": ["related",
-            "service",
-            "metadata",
-            "project",
-            "publication",
-            "datacentre",
-            "data"
-          ]
-        }, {
-          "id": "href",
-          "title": "link"
-        },
-        "!hreflang",
-        "!accessed",
-        "!length",
-        "!etag", {
-          "id": "type",
-          "title": "type",
-          "autocomplete": true
-        },
-        "!modified"
-      ]
+      "items": {
+        "fields": [{
+            "id": "rel",
+            "title": "relation to dataset",
+            "enum": ["related",
+              "service",
+              "metadata",
+              "project",
+              "publication",
+              "datacentre",
+              "parent",
+              "internal",
+              "doi",
+              "data"
+            ]
+          }, {
+            "id": "href",
+            "title": "link"
+          },
+          "!hreflang",
+          "!acccessed",
+          "!length",
+          "!etag", {
+            "id": "type",
+            "title": "type",
+            "autocomplete": true
+          },
+          "!modified"
+        ]
+      }
     }]
+  }, {
+    "title": "Coverage",
+    "fields": [{
+        "id": "activity",
+        "title": "data collection period"
+      },
+      "coverage",
+      "placenames"
+    ]
   }, {
     "title": "People",
     "fields": [{
       "id": "people",
-      "fields": [{
-          "id": "first_name",
-          "title": "first name"
-        }, {
-          "id": "last_name",
-          "title": "last name"
-        },
-        "!id"
-      ]
+      "items": {
+        "fields": [{
+            "id": "first_name",
+            "title": "first name"
+          }, {
+            "id": "last_name",
+            "title": "last name"
+          },
+          "!id"
+        ]
+      }
     }]
-  },
-  {
+  }, {
+    "title": "Organisations",
+    "fields": [{
+      "id": "organisations",
+      "items": {
+        "fields": [
+          "!id",
+          "email", {
+            "id": "gcmd_short_name",
+            "title": "GCMD short name"
+          },
+          "roles",
+          "homepage"
+        ]
+      }
+    }]
+  }, {
     "title": "Edits",
-    "fields": [
-     "comment",
-     {
-        "id": "changes",
-        "title": "changes for major updates"
-     },
-     {
+    "fields": [{
         "id": "created",
         "disabled": true
       }, {
@@ -100,6 +126,10 @@
       }, {
         "id": "updated_by",
         "disabled": true
+      },
+      "comment", {
+        "id": "changes",
+        "title": "changes for major updates"
       }
     ]
   }]
