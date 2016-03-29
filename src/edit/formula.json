@@ -41,7 +41,7 @@
       "id": "links",
       "fields": [{
           "id": "rel",
-          "title": "relation to Troll booking",
+          "title": "relation to station booking",
           "enum": ["related",
             "service",
             "metadata",

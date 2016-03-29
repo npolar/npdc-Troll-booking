@@ -1,6 +1,6 @@
 'use strict';
 
-var TrollBookingEditController = function($scope, $controller, $routeParams, TrollBooking, formula,
+var StationBookingEditController = function($scope, $controller, $routeParams, StationBooking, formula,
   formulaAutoCompleteService, npdcAppConfig, chronopicService) {
   'ngInject';
 
@@ -9,11 +9,11 @@ var TrollBookingEditController = function($scope, $controller, $routeParams, Tro
     $scope: $scope
   });
 
-  // TrollBooking -> npolarApiResource -> ngResource
-  $scope.resource = TrollBooking;
+  // StationBooking -> npolarApiResource -> ngResource
+  $scope.resource = StationBooking;
 
   let formulaOptions = {
-    schema: '//api.npolar.no/schema/troll-booking',
+    schema: '//api.npolar.no/schema/station-booking',
     form: 'edit/formula.json',
     templates: npdcAppConfig.formula.templates.concat([{
       match(field) {
@@ -28,7 +28,7 @@ var TrollBookingEditController = function($scope, $controller, $routeParams, Tro
   $scope.formula.i18n.add(require('./translation.json'), 'en');
 
   formulaAutoCompleteService.autocompleteFacets(['organisations.name', 'organisations.email',
-    'organisations.homepage', 'organisations.gcmd_short_name', 'links.type', 'sets', 'tags'], TrollBooking, $scope.formula);
+    'organisations.homepage', 'organisations.gcmd_short_name', 'links.type', 'sets', 'tags'], StationBooking, $scope.formula);
 
   chronopicService.defineOptions({ match: 'released', format: '{date}'});
   chronopicService.defineOptions({ match(field) {
@@ -39,4 +39,4 @@ var TrollBookingEditController = function($scope, $controller, $routeParams, Tro
   $scope.edit();
 };
 
-module.exports = TrollBookingEditController;
+module.exports = StationBookingEditController;

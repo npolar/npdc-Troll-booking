@@ -1,10 +1,10 @@
 'use strict';
 
-var TrollBookingSearchController = function ($scope, $location, $controller, TrollBooking, npdcAppConfig, NpolarTranslate) {
+var StationBookingSearchController = function ($scope, $location, $controller, StationBooking, npdcAppConfig, NpolarTranslate) {
   'ngInject';
 
   $controller('NpolarBaseController', { $scope: $scope });
-  $scope.resource = TrollBooking;
+  $scope.resource = StationBooking;
   npdcAppConfig.cardTitle = 'npdc.app.Title';
   npdcAppConfig.search.local.results.detail = function (entry) {
     return "Released: " + (entry.released ? entry.released.split('T')[0] : '-');
@@ -24,4 +24,4 @@ var TrollBookingSearchController = function ($scope, $location, $controller, Tro
 
 };
 
-module.exports = TrollBookingSearchController;
+module.exports = StationBookingSearchController;

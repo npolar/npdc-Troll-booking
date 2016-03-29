@@ -1,14 +1,14 @@
 'use strict';
 require('should');
 
-describe('TrollBookingEditController', function () {
-  var $scope, $controller, $routeParams, TrollBooking;
+describe('StationBookingEditController', function () {
+  var $scope, $controller, $routeParams, StationBooking;
 
   // Set up mocks
   before(function () {
     $scope = {};
     $routeParams = {};
-    TrollBooking = {};
+    StationBooking = {};
     $controller = function () {};
   });
 

@@ -7,13 +7,13 @@ var router = function($routeProvider, $locationProvider) {
 
   $routeProvider.when('/:id', {
     templateUrl: 'show/show-troll-booking.html',
-    controller: 'TrollBookingShowController'
+    controller: 'StationBookingShowController'
   }).when('/:id/edit', {
     template: '<npdc:formula></npdc:formula>',
-    controller: 'TrollBookingEditController'
+    controller: 'StationBookingEditController'
   }).when('/', {
     templateUrl: 'search/search.html',
-    controller: 'TrollBookingSearchController',
+    controller: 'StationBookingSearchController',
     reloadOnSearch: false
   });
 };

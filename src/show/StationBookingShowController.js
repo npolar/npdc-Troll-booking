@@ -1,39 +1,39 @@
 'use strict';
 
-var TrollBookingShowController = function($controller, $routeParams,
-  $scope, $q, TrollBooking, npdcAppConfig) {
+var StationBookingShowController = function($controller, $routeParams,
+  $scope, $q, StationBooking, npdcAppConfig) {
     'ngInject';
 
 
   $controller('NpolarBaseController', {
     $scope: $scope
   });
-  $scope.resource = TrollBooking;
+  $scope.resource = StationBooking;
 
 
 
-  let uri = (troll_booking) => {
-    let link = troll_booking.links.find(l => {
+  let uri = (station_booking) => {
+    let link = station_booking.links.find(l => {
       return l.rel === "alternate" && (/html$/).test(l.type);
     });
     if (link) {
       return link.href.replace(/^http:/, "https:");
     } else {
-      return `https://data.npolar.no/troll_booking/${ troll_booking.id }`;
+      return `https://data.npolar.no/station_booking/${ station_booking.id }`;
     }
   };
 
 
   let show = function() {
-    $scope.show().$promise.then((troll_booking) => {
+    $scope.show().$promise.then((station_booking) => {
       npdcAppConfig.cardTitle = $scope.document.title;
-      $scope.links = troll_booking.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
-      $scope.data = troll_booking.links.filter(l => l.rel === "data");
-      $scope.alternate = troll_booking.links.filter(l => ((l.rel === "alternate" && l.type !== "text/html") || l.rel === "edit"));
+      $scope.links = station_booking.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
+      $scope.data = station_booking.links.filter(l => l.rel === "data");
+      $scope.alternate = station_booking.links.filter(l => ((l.rel === "alternate" && l.type !== "text/html") || l.rel === "edit"));
 
 
 
-      $scope.uri = uri(troll_booking);
+      $scope.uri = uri(station_booking);
 
   /*    let relatedDatasets = Dataset.array({
         q: dataset.title,
@@ -70,4 +70,4 @@ var TrollBookingShowController = function($controller, $routeParams,
   show();
 };
 
-module.exports = TrollBookingShowController;
+module.exports = StationBookingShowController;
