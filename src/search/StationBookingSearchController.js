@@ -1,30 +1,35 @@
 'use strict';
 
-var StationBookingSearchController = function($scope, $location, $controller, $filter, StationBooking, npdcAppConfig, NpolarTranslate) {
+
+var StationBookingSearchController = function ($scope, $location, $controller, $filter, StationBooking, npdcAppConfig, NpolarTranslate) {
   'ngInject';
 
-  $controller('NpolarBaseController', {
-    $scope: $scope
-  });
+  $controller('NpolarBaseController', { $scope: $scope });
   $scope.resource = StationBooking;
 
-  npdcAppConfig.search.local.results.detail = function(entry) {
-    return NpolarTranslate.translate("Released: ") + (entry.released ? $filter('date')(entry.released.split('T')[0]) : '-');
+  npdcAppConfig.search.local.results.detail = (e) => {
+    return "Activity start: " + e.activity[0].departed.split('T')[0];
+   };
+
+  npdcAppConfig.cardTitle = "Station booking Archive";
+  npdcAppConfig.search.local.results.subtitle = "type";
+  npdcAppConfig.search.local.filterUi = {
+    'year-activity.departed': {
+      type: 'range'
+    },
+    'updated': {
+      type: 'hidden'
+    }
   };
 
   let query = function() {
     let defaults = {
       limit: "50",
-      sort: "-updated,-released",
-      fields: 'title,id,updated,released',
-      facets: "research_type,research_station",
-      score: true
-    };
-    let invariants = $scope.security.isAuthenticated() ? {} : {
-      "not-draft": "yes",
-      "not-progress": "planned",
-      "filter-links.rel": "data"
-    };
+      sort: "-updated",
+      fields: 'title,id,collection,updated',
+      facets: 'research_station,research_type'};
+
+    let invariants = $scope.security.isAuthenticated() ? {} : {} ;
     return Object.assign({}, defaults, invariants);
   };
 
@@ -37,3 +42,4 @@ var StationBookingSearchController = function($scope, $location, $controller, $f
 };
 
 module.exports = StationBookingSearchController;
+

@@ -1,7 +1,12 @@
 {
   "fieldsets": [{
     "title": "Core",
-    "fields": [{
+    "fields": [
+     {
+        "id": "title",
+         "title": "research project title or other title"
+      },
+    {
         "id": "research_station",
          "title": "research station"
       },
@@ -9,17 +14,19 @@
         "id": "research_type",
          "title": "work tasks"
       },
-      "summary"]
-      },
+      "summary",
+      "topics",
       {
-    "title": "Research",
-    "fields": [{
-        "id": "research_project",
-         "title": "research project title"
-      },
-      "topics"
+        "id": "stay_dates",
+        "items": {
+          "fields": [
+            "start_date",
+            "end_date"
+          ]
+        }
+      }
       ]},
-  {
+     {
     "title": "People",
     "fields": [{
       "id": "people",
@@ -27,18 +34,29 @@
         "fields": [
           "!id",
           {
+             "id": "number_of_persons",
+             "title": "number of persons"
+           },
+           {
+    "title": "names",
+    "fields": [{
+      "items": {
+        "fields": [{
             "id": "first_name",
             "title": "first name",
-            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array"
+            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array&q="
           }, {
             "id": "last_name",
             "title": "last name",
-            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array"
-          },
+            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array&q="
+          }
+        ]
+        }
+      }]
+     },
           "organisation",
           "country",
-          "roles",
-           "number_of_persons"
+          "roles"
         ]
       }
     }]
@@ -50,19 +68,10 @@
       "items": {
         "fields": [{
             "id": "rel",
-            "title": "relation to booking",
-            "enum": ["related",
-              "service",
-              "metadata",
-              "project",
-              "publication",
-              "datacentre",
-              "internal",
-              "data"
-            ]
+            "title": "relation to booking"
           }, {
             "id": "href",
-            "title": "link"
+            "title": "link (please include protocol, f.ex http://)"
           },
           "!hreflang",
           "!acccessed",

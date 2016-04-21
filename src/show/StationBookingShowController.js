@@ -10,7 +10,7 @@ var StationBookingShowController = function($controller, $routeParams,
   });
   $scope.resource = StationBooking;
 
- /* let authors = (dataset) => {
+/*  let authors = (dataset) => {
 
     var folks = [];
     var orgs = [];
@@ -24,7 +24,7 @@ var StationBookingShowController = function($controller, $routeParams,
     }
     return folks.concat(orgs);
 
-  };
+  }; */
 
   let author_names = (dataset) => {
     var et_al_suffix = "";
@@ -147,7 +147,7 @@ var StationBookingShowController = function($controller, $routeParams,
 
     });
 
-  }; */
+  };
 
 
   show();

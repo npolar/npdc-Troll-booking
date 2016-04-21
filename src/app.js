@@ -3,21 +3,18 @@ var npdcCommon = require('npdc-common');
 var AutoConfig = npdcCommon.AutoConfig;
 
 var angular = require('angular');
-require('npdc-common/src/wrappers/leaflet');
 
-var npdcStationBookingApp = angular.module('npdcStationBookingApp', ['npdcCommon', 'leaflet']);
+var npdcStationBookingApp = angular.module('npdcStationBookingApp', ['npdcCommon']);
 
 npdcStationBookingApp.controller('StationBookingShowController', require('./show/StationBookingShowController'));
 npdcStationBookingApp.controller('StationBookingSearchController', require('./search/StationBookingSearchController'));
 npdcStationBookingApp.controller('StationBookingEditController', require('./edit/StationBookingEditController'));
-//npdcStationBookingApp.directive('datasetCoverage', require('./edit/coverage/coverageDirective'));
 
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
   {'path': '/', 'resource': 'NpolarApi'},
-  {'path': '/user', 'resource': 'User'},
-  {'path': '/station-booking', 'resource': 'StationBooking' }
-
+//  {'path': '/user', 'resource': 'User'},
+ {'path': '/station-booking', 'resource': 'StationBooking'}
 ];
 
 resources.forEach(service => {
@@ -31,7 +28,7 @@ resources.forEach(service => {
 npdcStationBookingApp.config(require('./router'));
 
 npdcStationBookingApp.config(($httpProvider, npolarApiConfig) => {
-  var autoconfig = new AutoConfig("production");
+  var autoconfig = new AutoConfig("test");
   angular.extend(npolarApiConfig, autoconfig, { resources });
   console.debug("npolarApiConfig", npolarApiConfig);
 

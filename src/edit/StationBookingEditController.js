@@ -40,8 +40,12 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
   };
 
   $scope.formula = formula.getInstance(formulaOptions);
-  formulaAutoCompleteService.autocompleteFacets(['organisations.name', 'organisations.email',
-    'organisations.homepage', 'organisations.gcmd_short_name', 'links.type', 'sets', 'tags'], StationBooking, $scope.formula);
+
+
+  let autocompleteFacets = ["people.first_name", "people.last_name", "people.country"];
+  formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, $scope.resource, $scope.formula);
+
+
 
   chronopicService.defineOptions({ match: 'released', format: '{date}'});
   chronopicService.defineOptions({ match(field) {
