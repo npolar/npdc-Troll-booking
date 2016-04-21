@@ -10,13 +10,13 @@ var StationBookingShowController = function($controller, $routeParams,
   });
   $scope.resource = StationBooking;
 
-/*  let authors = (dataset) => {
+ /* let authors = (StationBooking) => {
 
     var folks = [];
     var orgs = [];
 
-    if (dataset.people instanceof Array) {
-      folks = dataset.people.filter(p => p.roles.includes("author"));
+    if (StationBooking.people instanceof Array) {
+      folks = station-booking.people.filter(p => p.roles.includes("author"));
     }
 
     if (folks.length === 0 && dataset.organisations instanceof Array) {
@@ -25,6 +25,8 @@ var StationBookingShowController = function($controller, $routeParams,
     return folks.concat(orgs);
 
   }; */
+  console.log("xxxxxxx");
+  console.log(document);
 
   let author_names = (dataset) => {
     var et_al_suffix = "";
@@ -47,15 +49,7 @@ var StationBookingShowController = function($controller, $routeParams,
     return y;
   };
 
-  let publisher = (dataset) => {
-    let p = dataset.organisations.filter(o => o.roles.includes("publisher"));
 
-    if (p.length > 0) {
-      return p;
-    } else {
-      return [];
-    }
-  };
 
   let uri = (dataset) => {
     let link = dataset.links.find(l => {
@@ -68,21 +62,6 @@ var StationBookingShowController = function($controller, $routeParams,
     }
   };
 
-  // Citation string
-  // Adapted from https://github.com/npolar/data.npolar.no/blob/0094e7f2f690f02524543b132b4f7fb3cc89a7e3/modules/app/dataArchive/model/dataset.rb
-  let citation = (dataset) => {
-
-    // Fixed citation, e.g. /dataset/816e992b-63ff-41b5-85b9-b3258a55b31b
-    if (dataset.citation) {
-      return dataset.citation;
-    }
-
-    let citation = `${ author_names(dataset) } (${ published_year(dataset) }). ${ dataset.title }. ${ publisher(dataset).map(p => { return p.name; }).join(", ")  }`;
-    if (true || publisher.id === "npolar.no") {
-      citation += ` (Tromsø, Norway): ${ uri(dataset) }`;
-    }
-    return citation;
-  };
 
   let show = function() {
     $scope.show().$promise.then((dataset) => {

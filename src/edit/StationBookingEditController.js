@@ -24,9 +24,6 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
     }, {
       match: "people_item",
       template: '<npdc:formula-person></npdc:formula-person>'
-    }, {
-      match: "sciencekeywords_item",
-      template: '<npdc:formula-gcmd-keyword></npdc:formula-gcmd-keyword>'
     }
   ]),
     languages: npdcAppConfig.formula.languages.concat([{
