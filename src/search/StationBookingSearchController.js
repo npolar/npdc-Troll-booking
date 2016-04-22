@@ -7,9 +7,9 @@ var StationBookingSearchController = function ($scope, $location, $controller, $
   $controller('NpolarBaseController', { $scope: $scope });
   $scope.resource = StationBooking;
 
-  npdcAppConfig.search.local.results.detail = (e) => {
-    return "Activity start: " + e.activity[0].departed.split('T')[0];
-   };
+  //npdcAppConfig.search.local.results.detail = (e) => {
+  //  return "Activity start: " + e.activity[0].departed.split('T')[0];
+  // };
 
   npdcAppConfig.cardTitle = "Station booking Archive";
   npdcAppConfig.search.local.results.subtitle = "type";
