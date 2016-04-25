@@ -13,8 +13,10 @@ npdcStationBookingApp.controller('StationBookingEditController', require('./edit
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
   {'path': '/', 'resource': 'NpolarApi'},
-//  {'path': '/user', 'resource': 'User'},
- {'path': '/station-booking', 'resource': 'StationBooking'}
+  {'path': '/dataset', 'resource': 'Dataset'},
+  {'path': '/project', 'resource': 'Project'},
+  {'path': '/publication', 'resource': 'Publication'},
+  {'path': '/station-booking', 'resource': 'StationBooking'}
 ];
 
 resources.forEach(service => {
