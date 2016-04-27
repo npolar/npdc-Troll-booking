@@ -35,13 +35,9 @@
           "!id",
           {
              "id": "number_of_persons",
-             "title": "number of persons"
+             "title": "number of persons (if names not available)"
            },
            {
-    "title": "names",
-    "fields": [{
-      "items": {
-        "fields": [{
             "id": "first_name",
             "title": "first name",
             "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array&q="
@@ -49,14 +45,27 @@
             "id": "last_name",
             "title": "last name",
             "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array&q="
-          }
-        ]
-        }
-      }]
-     },
+          },
           "organisation",
           "country",
-          "roles"
+          "roles",
+          {
+        "id": "station_dates",
+        "title": "days at the research station",
+        "items": {
+          "fields": [
+           {
+             "id": "start_date",
+             "title": "arrival date"
+           },
+           {
+             "id": "end_date",
+             "title": "departure date"
+           }
+          ]
+        }
+      }
+
         ]
       }
     }]

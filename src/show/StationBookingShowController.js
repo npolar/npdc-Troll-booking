@@ -11,6 +11,24 @@ var StationBookingShowController = function($controller, $routeParams,
   $scope.resource = StationBooking;
 
 
+
+  let authors = (stationBooking) => {
+
+    var folks = [];
+    var orgs = [];
+
+    if (stationBooking.people instanceof Array) {
+      folks = stationBooking.people.filter(p => p.roles.includes("author"));
+    }
+
+    if (folks.length === 0 && stationBooking.organisations instanceof Array) {
+      orgs = stationBooking.organisations.filter(o => o.roles.includes("author"));
+    }
+    return folks.concat(orgs);
+
+  };
+
+
   let uri = (stationBooking) => {
     let link = stationBooking.links.find(l => {
       return l.rel === "alternate" && (/html$/).test(l.type);
@@ -25,7 +43,7 @@ var StationBookingShowController = function($controller, $routeParams,
 
   let show = function() {
     $scope.show().$promise.then((stationBooking) => {
-
+      $scope.document.research_type =  convert($scope.document.research_type);
       $scope.links = stationBooking.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
       $scope.data = stationBooking.links.filter(l => l.rel === "data");
       $scope.alternate = stationBooking.links.filter(l => ((l.rel === "alternate" && l.type !== "text/html") || l.rel === "edit")).concat({
@@ -34,6 +52,15 @@ var StationBookingShowController = function($controller, $routeParams,
         type: "application/ld+json"
       });
 
+      $scope.authors = authors(stationBooking).map(a => {
+        if (!a.name && a.first_name) {
+          a.name = `${a.first_name} ${a.last_name}`;
+        }
+        return a;
+      });
+
+
+      $scope.uri = uri(stationBooking);
 
       let relatedDatasets = Dataset.array({
         q: stationBooking.title,
@@ -69,5 +96,20 @@ var StationBookingShowController = function($controller, $routeParams,
 
   show();
 };
+
+/* convert from camelCase to lower case text*/
+function convert(str) {
+       var  positions = '';
+
+       for(var i=0; i<(str).length; i++){
+           if(str[i].match(/[A-Z]/) !== null){
+             positions += " ";
+             positions += str[i].toLowerCase();
+        } else {
+            positions += str[i];
+        }
+      }
+        return positions;
+}
 
 module.exports = StationBookingShowController;
