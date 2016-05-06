@@ -4,7 +4,8 @@
        "title": "research station",
        "values": [
               "Troll",
-              "Norwegia"
+              "Norwegia",
+              "Sverdrup"
        ]
      },
      "research_type": {
@@ -12,9 +13,12 @@
        "values": [
               "research monitoring",
               "research project",
+              "mapping",
+              "outreach/VIP",
+              "education",
               "logistic operations",
-              "VIP",
-              "other"
+              "other, research",
+              "other, not research"
        ]
      },
      "topics": {

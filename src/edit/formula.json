@@ -18,10 +18,15 @@
       "topics",
       {
         "id": "stay_dates",
+        "title":"group stay dates",
         "items": {
-          "fields": [
-            "start_date",
-            "end_date"
+          "fields": [{
+            "id": "start_date",
+            "title":"arrival date"
+            },{
+            "id": "end_date",
+            "title":"departure date"
+          }
           ]
         }
       }
@@ -48,7 +53,9 @@
           },
           "organisation",
           "country",
-          "roles",
+          {
+           "id": "roles",
+        "title": "choose all applicable roles"},
           {
         "id": "station_dates",
         "title": "days at the research station",
@@ -109,7 +116,7 @@
       },
        {
         "id": "comment",
-        "title": "comments for major updates"
+        "title": "comments for major registration updates"
       }
     ]
   }]

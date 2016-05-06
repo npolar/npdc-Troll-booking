@@ -1,7 +1,7 @@
 'use strict';
 
 var StationBookingEditController = function($scope, $controller, $routeParams, StationBooking, formula,
-  formulaAutoCompleteService, npdcAppConfig, chronopicService, fileFunnelService, NpolarLang) {
+  formulaAutoCompleteService, npdcAppConfig, chronopicService, fileFunnelService, NpolarLang, npolarApiConfig, NpolarApiSecurity, NpolarMessage) {
   'ngInject';
 
   // EditController -> NpolarEditController
@@ -12,32 +12,28 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
   // StationBooking -> npolarApiResource -> ngResource
   $scope.resource = StationBooking;
 
-  let formulaOptions = {
-    schema: '//api.npolar.no/schema/station-booking',
-    form: 'edit/formula.json',
-    language: NpolarLang.getLang(),
-    templates: npdcAppConfig.formula.templates.concat([{
-      match(field) {
-        return ["alternate", "edit", "via"].includes(field.value.rel);
-      },
-      hidden: true
-    }, {
+  let templates = [{
       match: "people_item",
       template: '<npdc:formula-person></npdc:formula-person>'
     }
-  ]),
-    languages: npdcAppConfig.formula.languages.concat([{
+  ];
+
+  let i18n = [{
       map: require('./en.json'),
       code: 'en'
     },
     {
       map: require('./no.json'),
       code: 'nb_NO',
-    }])
-  };
+    }];
 
-  $scope.formula = formula.getInstance(formulaOptions);
-
+  $scope.formula = formula.getInstance({
+    schema: '//api.npolar.no/schema/station-booking',
+    form: 'edit/formula.json',
+    language: NpolarLang.getLang(),
+    templates: npdcAppConfig.formula.templates.concat(templates),
+    languages: npdcAppConfig.formula.languages.concat(i18n)
+   });
 
   let autocompleteFacets = ["people.first_name", "people.last_name", "people.country"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, $scope.resource, $scope.formula);

@@ -1,8 +1,7 @@
 {
   "fieldsets" : [
-    "Base",
-    "Forskning",
-     "Personer",
+    "Kjernedata",
+    "Personer",
     "Lenker",
     "Endringer"
   ],
@@ -11,7 +10,8 @@
       "title": "forskningsstasjon",
        "values": [
         "Troll",
-        "Norwegia"
+        "Norwegia",
+        "Sverdrup"
       ]
 
     },
@@ -20,16 +20,19 @@
       "values": [
         "forskningsmonitorering",
         "forskningsprosjekt",
-        "logistikk operasjoner",
-        "VIP",
-        "annet"
+        "kartlegging",
+        "informasjonsvirksomhet/VIP",
+        "undervisning",
+        "logistikkoperasjoner",
+        "annet, forskning",
+        "annet, ikke forskning"
       ]
     },
      "summary": {
       "title": "beskrivelse"
     },
-     "research_project": {
-      "title": "tittel på forskningsprosjekt"
+     "title": {
+      "title": "tittel forskningsprosjekt eller annen tittel"
     },
      "topics": {
       "title": "emner",
@@ -65,6 +68,19 @@
         "vegetasjon"
       ]
     },
+    "stay_dates": {
+      "title":"gruppe oppholdsdatoer",
+      "items": {
+        "fields": {
+          "start_date": {
+           "title":"ankomst dato"
+          },
+          "end_date": {
+           "title":"avreise dato"
+          }
+        }
+      }
+      },
     "released": {
       "title": "utgivelsesdato"
     },
@@ -72,6 +88,9 @@
       "title": "lenker",
       "items": {
         "fields": {
+          "href":{
+            "title":"lenke (inkludere protokoll, f.eks http://)"
+          },
           "rel": {
             "title": "relasjon",
             "values": [
@@ -105,7 +124,7 @@
             "title": "antall personer"
           },
           "roles": {
-            "title": "roller",
+            "title": "roller (velg alle aktuelle)",
             "values": [
               "snekker",
               "kokk",
@@ -128,6 +147,19 @@
                 "VIP"
             ]
           },
+            "station_dates": {
+      "title":"døgn på forskningstasjonen",
+      "items": {
+        "fields": {
+          "start_date": {
+           "title":"ankomst dato"
+          },
+          "end_date": {
+           "title":"avreise dato"
+          }
+        }
+      }
+      },
           "organisation": {
             "title": "organisasjon"
           },
@@ -150,29 +182,7 @@
       "title": "oppdatert av"
     },
     "comment": {
-      "title": "kommentar"
-    },
-    "changes": {
-      "title": "kommentarer til større endringer",
-      "items": {
-        "fields": {
-          "datetime": {
-            "title": "dato"
-          },
-          "name": {
-            "title": "navn"
-          },
-          "email": {
-            "title": "e-post"
-          },
-          "comment": {
-            "title": "kommentar"
-            },
-          "rev": {
-            "title": "revisjon"
-          }
-        }
-      }
+      "title": "kommentar til større endringer i registreringen"
     }
   }
 }
