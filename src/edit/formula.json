@@ -84,11 +84,12 @@
       "items": {
         "fields": [{
             "id": "rel",
-            "title": "relation to booking"
+            "title": "type of link (relation between this registration and the link)"
           }, {
             "id": "href",
-            "title": "link (please include protocol, f.ex http://)"
+            "title": "link (please include protocol f.ex. 'http://' as in link http://www.npolar.no)"
           },
+          "title",
           "!hreflang",
           "!acccessed",
           "!length",

@@ -11,14 +11,13 @@
      "research_type": {
        "title": "type of research",
        "values": [
-              "research monitoring",
-              "research project",
+              "research",
+              "monitoring",
               "mapping",
               "outreach/VIP",
               "education",
               "logistic operations",
-              "other, research",
-              "other, not research"
+              "other"
        ]
      },
      "topics": {

@@ -18,14 +18,13 @@
     "research_type": {
       "title": "arbeidsoppgaver",
       "values": [
-        "forskningsmonitorering",
-        "forskningsprosjekt",
+        "forskning",
+        "monitorering",
         "kartlegging",
         "informasjonsvirksomhet/VIP",
         "undervisning",
         "logistikkoperasjoner",
-        "annet, forskning",
-        "annet, ikke forskning"
+        "annet"
       ]
     },
      "summary": {
@@ -89,19 +88,21 @@
       "items": {
         "fields": {
           "href":{
-            "title":"lenke (inkludere protokoll, f.eks http://)"
+            "title":"weblenke inkludert protokoll (f.eks. http:// som i lenken http://www.npolar.no)"
           },
           "rel": {
-            "title": "relasjon",
+            "title": "lenke type (forbindelse mellom denne registreringen og lenke)",
             "values": [
               "relatert",
-              "service",
-              "metadata",
-              "prosjekt",
+              "program",
+              "forelder",
+              "barn",
+              "datasett",
               "publikasjon",
-              "datacenter",
-              "intern",
-              "data"
+              "ekspedisjon",
+              "prosjekt",
+              "referanse",
+              "track"
               ]
           },
           "title": {
