@@ -12,11 +12,7 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
   // StationBooking -> npolarApiResource -> ngResource
   $scope.resource = StationBooking;
 
-  let templates = [{
-      match: "people_item",
-      template: '<npdc:formula-person></npdc:formula-person>'
-    }
-  ];
+  let templates = [];
 
   let i18n = [{
       map: require('./en.json'),
@@ -36,7 +32,7 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
    });
 
   let autocompleteFacets = ["people.first_name", "people.last_name", "people.organisation","people.country"];
-  formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, $scope.resource, $scope.formula);
+  formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, StationBooking, $scope.formula);
 
 
 

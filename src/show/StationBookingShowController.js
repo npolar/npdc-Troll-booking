@@ -46,14 +46,16 @@ var StationBookingShowController = function($controller, $routeParams,
     $scope.show().$promise.then((stationBooking) => {
       $scope.document.research_type =  convert($scope.document.research_type);
 
+
       //Location on map should be the research station
       var bounds =[];
       switch($scope.document.research_station) {
         case 'sverdrup':
             bounds = [[[78.91,11.93],[78.91,11.93]]];
             break;
-        case 'norwegia':
-            bounds = [[[-71.95, 2.45],[-72.05, 2.55]]];
+        case 'norvegia':
+           // bounds = [[[-54.40, 3.28],[-54.40, 3.28]]];
+             bounds = [[[-54.4097, 3.2886889],[-54.4097, 3.2886889]]];
             break;
         default: //troll
             bounds = [[[-72.01, 2.53],[-72.01, 2.53]]];

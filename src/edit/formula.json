@@ -44,12 +44,10 @@
            },
            {
             "id": "first_name",
-            "title": "first name",
-            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,country&format=json&variant=array&q="
+            "title": "first name"
           }, {
             "id": "last_name",
-            "title": "last name",
-            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,country&format=json&variant=array&q="
+            "title": "last name"
           },
           "organisation",
           "country",
