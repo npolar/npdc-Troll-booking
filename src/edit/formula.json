@@ -45,11 +45,11 @@
            {
             "id": "first_name",
             "title": "first name",
-            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array&q="
+            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,country&format=json&variant=array&q="
           }, {
             "id": "last_name",
             "title": "last name",
-            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,email&format=json&variant=array&q="
+            "autocomplete": "//api.npolar.no/person/?fields=first_name,last_name,organisation,country&format=json&variant=array&q="
           },
           "organisation",
           "country",
