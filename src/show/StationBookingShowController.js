@@ -11,7 +11,6 @@ var StationBookingShowController = function($controller, $routeParams,
   $scope.resource = StationBooking;
 
 
-
   let authors = (stationBooking) => {
 
     var folks = [];
@@ -40,12 +39,32 @@ var StationBookingShowController = function($controller, $routeParams,
     }
   };
 
+  $scope.mapOptions = {};
 
   let show = function() {
+
     $scope.show().$promise.then((stationBooking) => {
       $scope.document.research_type =  convert($scope.document.research_type);
+
+      //Location on map should be the research station
+      var bounds =[];
+      switch($scope.document.research_station) {
+        case 'sverdrup':
+            bounds = [[[78.91,11.93],[78.91,11.93]]];
+            break;
+        case 'norwegia':
+            bounds = [[[-71.95, 2.45],[-72.05, 2.55]]];
+            break;
+        default: //troll
+            bounds = [[[-72.01, 2.53],[-72.01, 2.53]]];
+      }
+      $scope.mapOptions.coverage = bounds;
+      $scope.mapOptions.geojson = "geojson";
+
+
       $scope.links = stationBooking.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
       $scope.data = stationBooking.links.filter(l => l.rel === "data");
+
       $scope.alternate = stationBooking.links.filter(l => ((l.rel === "alternate" && l.type !== "text/html") || l.rel === "edit")).concat({
         href: `http://api.npolar.no/station-booking/?q=&filter-id=${stationBooking.id}&format=json&variant=ld`,
         title: "DCAT (JSON-LD)",
@@ -95,6 +114,7 @@ var StationBookingShowController = function($controller, $routeParams,
 
 
   show();
+
 };
 
 /* convert from camelCase to lower case text*/

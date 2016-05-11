@@ -3,8 +3,9 @@ var npdcCommon = require('npdc-common');
 var AutoConfig = npdcCommon.AutoConfig;
 
 var angular = require('angular');
+require('npdc-common/src/wrappers/leaflet');
 
-var npdcStationBookingApp = angular.module('npdcStationBookingApp', ['npdcCommon']);
+var npdcStationBookingApp = angular.module('npdcStationBookingApp', ['npdcCommon','leaflet']);
 
 npdcStationBookingApp.controller('StationBookingShowController', require('./show/StationBookingShowController'));
 npdcStationBookingApp.controller('StationBookingSearchController', require('./search/StationBookingSearchController'));
@@ -13,9 +14,11 @@ npdcStationBookingApp.controller('StationBookingEditController', require('./edit
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
   {'path': '/', 'resource': 'NpolarApi'},
+  {'path': '/user', 'resource': 'User'},
   {'path': '/dataset', 'resource': 'Dataset'},
   {'path': '/project', 'resource': 'Project'},
   {'path': '/publication', 'resource': 'Publication'},
+   {'path': '/expedition', 'resource': 'Expedition'},
   {'path': '/station-booking', 'resource': 'StationBooking'}
 ];
 

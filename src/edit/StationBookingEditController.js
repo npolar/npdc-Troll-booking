@@ -45,8 +45,7 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
     return field.path.match(/^#\/activity\/\d+\/.+/);
   }, format: '{date}'});
 
-  let doc = $scope.edit();
-  console.log('doc', doc);
+   $scope.edit();
 };
 
 module.exports = StationBookingEditController;
