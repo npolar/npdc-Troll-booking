@@ -1,7 +1,8 @@
 'use strict';
 
 var StationBookingEditController = function($scope, $controller, $routeParams, StationBooking, formula,
-  formulaAutoCompleteService, npdcAppConfig, chronopicService, fileFunnelService, NpolarLang, npolarApiConfig, NpolarApiSecurity, NpolarMessage) {
+  formulaAutoCompleteService, npdcAppConfig, chronopicService, fileFunnelService, NpolarLang, npolarApiConfig,
+  NpolarApiSecurity, npolarCountryService, NpolarMessage) {
   'ngInject';
 
   // EditController -> NpolarEditController
@@ -31,9 +32,15 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
     languages: npdcAppConfig.formula.languages.concat(i18n)
    });
 
+  formulaAutoCompleteService.autocomplete({
+    match: "@country",
+    querySource: 'https://api.npolar.no/country',
+    label: 'name',
+    value: 'code'
+  }, $scope.formula);
+
   let autocompleteFacets = ["people.first_name", "people.last_name", "people.organisation"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, StationBooking, $scope.formula);
-
 
 
   chronopicService.defineOptions({ match: 'released', format: '{date}'});
