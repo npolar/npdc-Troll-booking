@@ -5,28 +5,28 @@
 <div class="np-padding">
   <div ng-if="document" class="np-doc">
 
-    <h3>station booking statistics</h3>
+    <h3>{{ 'Station booking statistics' | t }}</h3>
 
     <h1 class="md-display-2">{{ document.title }}</h1>
 
       <section>
-      <p ><md-icon>place</md-icon>Research station: {{document.research_station.charAt(0).toUpperCase() +  document.research_station.slice(1)}}</p>
-      <p>Type of research: {{document.research_type}}</p>
+      <p ><md-icon>place</md-icon>{{'Research station' | t }}: {{document.research_station.charAt(0).toUpperCase() +  document.research_station.slice(1)}}</p>
+      <p>{{ 'Type of research' | t }}: {{document.research_type}}</p>
         <div ng-if="document.stay_dates" ng-repeat="item in document.stay_dates">
-            </p> Group arrival day: {{ (item.start_date).split('T')[0] }} </p>
-            </p> Group departure day: {{ (item.end_date).split('T')[0] }} </p>
+            </p> {{'Group arrival day' | t }}: {{ (item.start_date).split('T')[0] }} </p>
+            </p> {{'Group departure day' | t }}: {{ (item.end_date).split('T')[0] }} </p>
         </div>
       </section>
 
       <section ng-if="document.summary">
-        <h3>Summary</h3>
+        <h3>{{ 'Summary' | t }}</h3>
         <md-divider></md-divider>
         <p marked="document.summary"></p>
       </section>
 
 
 <section ng-if="document.people && document.people.length > 0">
-  <h3>People</h3>
+  <h3>{{ 'People' | t }}</h3>
   <md-divider></md-divider>
   <md-list>
     <md-list-item class="md-2-line" ng-repeat="person in document.people">
@@ -36,7 +36,7 @@
           <p> {{ person.organisation }}&nbsp;{{ person.country }} </p>
           <p ng-if="person.roles"><span ng-repeat="r in person.roles">{{ r | t }}<span ng-if="!$last">, </span></span></p>
           <div ng-repeat="dates in person.station_dates">
-           <p>{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10) }}</p>
+           <p>{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}}</p>
          </div>
         </div>
       </md-list-item>
@@ -45,11 +45,11 @@
 
  <npdc:organisations></npdc:organisations>
 
- <!-- <npdc:links links="links" ></npdc:links> -->
+  <!--<npdc:links links="links" ></npdc:links> -->
 
  <section>
   <div ng-if="links.length > 0">
-    <h3>Links</h3>
+    <h3>{{ 'Links' | t }}</h3>
     <md-divider></md-divider>
     <md-list>
       <md-list-item class="md-2-line" ng-repeat="link in links">
@@ -66,10 +66,10 @@
 
       <section>
         <md-divider></md-divider>
-        <h3>Classification</h3>
+        <h3>{{ 'Classification' | t }}</h3>
 
         <div ng-if="document.topics">
-          <h4>Topics</h4>
+          <h4>{{ 'Topics' | t }}</h4>
           <p>
             <md-icon>label_outline</md-icon><span ng-repeat="topic in document.topics">
               <a ng-href="?q=&filter-topics={{topic}}">{{ topic }}</a>{{!$last ? ' / ':''}}
@@ -80,7 +80,7 @@
 
       <section ng-if="alternate">
         <md-divider></md-divider>
-        <h3>Machine-readable metadata</h3>
+        <h3>{{ 'Machine-readable metadata' | t }}</h3>
         <!-- @todo CC0 for metadata? <p></p> -->
         <p>
           <div ng-repeat="link in alternate">

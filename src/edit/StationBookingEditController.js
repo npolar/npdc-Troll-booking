@@ -31,7 +31,7 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
     languages: npdcAppConfig.formula.languages.concat(i18n)
    });
 
-  let autocompleteFacets = ["people.first_name", "people.last_name", "people.organisation","people.country"];
+  let autocompleteFacets = ["people.first_name", "people.last_name", "people.organisation"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, StationBooking, $scope.formula);
 
 

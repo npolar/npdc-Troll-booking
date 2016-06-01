@@ -1,16 +1,18 @@
 'use strict';
 
 
-var StationBookingSearchController = function ($scope, $location, $controller, $filter, StationBooking, npdcAppConfig, NpolarTranslate) {
+var StationBookingSearchController = function ($scope, $location, $controller, $filter, StationBooking, npdcAppConfig,  NpdcSearchService, NpolarTranslate) {
   'ngInject';
 
   $controller('NpolarBaseController', { $scope: $scope });
   $scope.resource = StationBooking;
 
 
+
  npdcAppConfig.search.local.results.detail = (entry) => {
-     let r = (entry.research_station).charAt(0).toUpperCase() +  (entry.research_station).slice(1) + ", last updated: ";
-     return r+` ${$filter('date')(entry.updated)}`;
+     let updatedText = NpolarTranslate.translate('updated');
+     let r = (entry.research_station).charAt(0).toUpperCase() +  (entry.research_station).slice(1) + ", "+ updatedText +":";
+     return r+` ${(entry.updated.split('T')[0])}`;
  };
 
 

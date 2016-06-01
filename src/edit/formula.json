@@ -50,9 +50,11 @@
             "title": "last name"
           },
           "organisation",
-          "country",
           {
-           "id": "roles",
+          "id": "@country",
+          "title": "country"},
+          {
+        "id": "roles",
         "title": "choose all applicable roles"},
           {
         "id": "station_dates",

@@ -164,7 +164,7 @@
           "organisation": {
             "title": "organisasjon"
           },
-          "country":{
+          "@country":{
             "title": "land"
           }
         }

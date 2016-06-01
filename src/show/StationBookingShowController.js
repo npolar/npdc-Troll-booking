@@ -63,12 +63,12 @@ var StationBookingShowController = function($controller, $routeParams,
       $scope.mapOptions.coverage = bounds;
       $scope.mapOptions.geojson = "geojson";
 
-
       $scope.links = stationBooking.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
       $scope.data = stationBooking.links.filter(l => l.rel === "data");
+      // or in files
 
-      $scope.alternate = stationBooking.links.filter(l => ((l.rel === "alternate" && l.type !== "text/html") || l.rel === "edit")).concat({
-        href: `http://api.npolar.no/station-booking/?q=&filter-id=${stationBooking.id}&format=json&variant=ld`,
+      $scope.alternate = stationBooking.links.filter(l => ((l.rel === "alternate") || l.rel === "edit")).concat({
+        href: `https://api.npolar.no/station-booking/?q=&filter-id=${stationBooking.id}&format=json`,
         title: "DCAT (JSON-LD)",
         type: "application/ld+json"
       });
