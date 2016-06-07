@@ -77,28 +77,29 @@
       }
     }]
   },
-     {
-    "title": "Links",
-    "fields": [{
-      "id": "links",
-      "items": {
-        "fields": [{
-            "id": "rel",
-            "title": "type of link (relation between this registration and the link)"
-          }, {
+   {
+      "title": "Links",
+      "fields": [{
+        "id": "links",
+        "items": {
+          "fields": [ {
             "id": "href",
             "title": "link (please include protocol f.ex. 'http://' as in link http://www.npolar.no)"
           },
-          "title",
-          "!hreflang",
-          "!acccessed",
-          "!length",
-          "!type",
-          "!etag",
-          "!modified"
-        ]
-      }
-    }]
+          {
+            "id": "rel",
+            "title": "relation between this registration and the link"
+          },
+        "!hreflang",
+        "!type",
+        "!length",
+        {
+          "id": "title",
+          "title": "link title"
+        }
+          ]
+        }
+      }]
   },
   {
     "title": "Edits",
