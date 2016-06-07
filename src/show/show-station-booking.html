@@ -7,20 +7,23 @@
 
     <h3>{{ 'Station booking statistics' | t }}</h3>
 
-    <h1 class="md-display-2">{{ document.title }}</h1>
+ <h1>
+  <span class="md-display-2">{{ document.title }} </span><span style={font-size:15%}>
+  [{{document.research_type}}]</span></h1>
+
 
       <section>
-      <p ><md-icon>place</md-icon>{{'Research station' | t }}: {{document.research_station.charAt(0).toUpperCase() +  document.research_station.slice(1)}}</p>
-      <p>{{ 'Type of research' | t }}: {{document.research_type}}</p>
+      <p ><md-icon>place</md-icon>
+        {{document.research_station.charAt(0).toUpperCase() +  document.research_station.slice(1)}}</p>
         <div ng-if="document.stay_dates" ng-repeat="item in document.stay_dates">
-            </p> {{'Group arrival day' | t }}: {{ (item.start_date).split('T')[0] }} </p>
-            </p> {{'Group departure day' | t }}: {{ (item.end_date).split('T')[0] }} </p>
+            </p> {{ (item.start_date).split('T')[0] }} - {{ (item.end_date).split('T')[0] }}</p>
         </div>
       </section>
 
       <section ng-if="document.summary">
+          <md-divider></md-divider>
         <h3>{{ 'Summary' | t }}</h3>
-        <md-divider></md-divider>
+
         <p marked="document.summary"></p>
       </section>
 
