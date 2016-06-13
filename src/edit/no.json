@@ -13,7 +13,6 @@
         "Norvegia",
         "Sverdrup"
       ]
-
     },
     "research_type": {
       "title": "arbeidsoppgaver",
@@ -101,7 +100,6 @@
               "publikasjon",
               "ekspedisjon",
               "prosjekt",
-              "referanse",
               "track"
               ]
           },
