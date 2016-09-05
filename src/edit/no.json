@@ -92,15 +92,10 @@
           "rel": {
             "title": "lenke type (forbindelse mellom denne registreringen og lenke)",
             "values": [
-              "relatert",
               "program",
-              "forelder",
-              "barn",
               "datasett",
-              "publikasjon",
               "ekspedisjon",
-              "prosjekt",
-              "track"
+              "prosjekt"
               ]
           },
           "title": {
@@ -167,6 +162,13 @@
           }
         }
       }
+    },
+    "draft": {
+      "title": "kladd (registrering holdes internt)",
+      "values": [
+           "ja",
+           "nei"
+      ]
     },
     "created": {
       "title": "opprettet"
