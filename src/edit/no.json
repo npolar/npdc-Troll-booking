@@ -92,6 +92,7 @@
           "rel": {
             "title": "lenke type (forbindelse mellom denne registreringen og lenke)",
             "values": [
+               "",
               "program",
               "datasett",
               "ekspedisjon",
