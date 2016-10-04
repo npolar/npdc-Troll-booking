@@ -43,10 +43,16 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, StationBooking, $scope.formula);
 
 
-  chronopicService.defineOptions({ match: 'released', format: '{date}'});
-  chronopicService.defineOptions({ match(field) {
-    return field.path.match(/^#\/activity\/\d+\/.+/);
-  }, format: '{date}'});
+ // chronopicService.defineOptions({ match: 'released', format: '{date}'});
+ // chronopicService.defineOptions({ match(field) {
+ //   return field.path.match(/^#\/activity\/\d+\/.+/);
+ // }, format: '{date}'});
+
+//Set chronopic view format (this does not change the internal value, i.e. ISO string date)
+ chronopicService.defineOptions({ match(field) {
+    return field.path.match(/_date$/);
+ }, format: '{date}'});
+
 
    $scope.edit();
 };
