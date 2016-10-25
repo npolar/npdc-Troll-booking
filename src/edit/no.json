@@ -2,6 +2,7 @@
   "fieldsets" : [
     "Kjernedata",
     "Personer",
+    "Grupper",
     "Lenker",
     "Endringer"
   ],
@@ -116,6 +117,56 @@
           "last_name": {
             "title": "etternavn"
           },
+          "roles": {
+            "title": "roller (velg alle aktuelle)",
+            "values": [
+              "snekker",
+              "kokk",
+              "elektriker",
+               "ekspedisjonsleder",
+               "feltassistent",
+               "gjest",
+                "forsker",
+                "IT",
+                "KSAT",
+                "mekaniker",
+                "mekaniker TAF",
+                "annet",
+                "lege",
+                "pilot",
+                "forskningstekniker",
+                "sikkerhet",
+                "servicetekniker",
+                "transport",
+                "VIP"
+            ]
+          },
+            "station_dates": {
+      "title":"døgn på forskningstasjonen",
+      "items": {
+        "fields": {
+          "start_date": {
+           "title":"ankomst dato"
+          },
+          "end_date": {
+           "title":"avreise dato"
+          }
+        }
+      }
+      },
+          "organisation": {
+            "title": "organisasjon"
+          },
+          "@country":{
+            "title": "land"
+          }
+        }
+      }
+    },
+     "groups": {
+      "title": "grupper",
+      "items": {
+        "fields": {
           "number_of_persons": {
             "title": "antall personer"
           },

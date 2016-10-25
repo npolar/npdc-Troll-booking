@@ -60,25 +60,25 @@
         "fields": {
           "roles": {
             "values": [
-              "carpenter",
-              "chef",
-              "electrician",
-              "expedition leader",
-              "field assistant",
-              "field responsible",
-              "investigator",
-              "IT",
-              "KSAT",
-              "mecanic",
-              "mecanic TAF",
-              "other",
-              "physician",
-              "pilot",
-              "research technitian",
-              "security",
-              "service technitian",
-              "transport",
-              "VIP"
+             "carpenter",
+                "chef",
+                "electrician",
+                "expedition leader",
+                "field assistant",
+                "guest",
+                "investigator",
+                "IT",
+                "KSAT",
+                "mecanic",
+                "mecanic TAF",
+                "other",
+                "physician",
+                "pilot",
+                "research technitian",
+                "security",
+                "service technitian",
+                "transport",
+                "VIP"
             ]
           }
         }
