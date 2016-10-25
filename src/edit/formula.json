@@ -38,10 +38,6 @@
       "items": {
         "fields": [
           "!id",
-          {
-             "id": "number_of_persons",
-             "title": "number of persons (if names not available)"
-           },
            {
             "id": "first_name",
             "title": "first name"
@@ -49,6 +45,45 @@
             "id": "last_name",
             "title": "last name"
           },
+          "organisation",
+          {
+          "id": "@country",
+          "title": "country"},
+          {
+        "id": "roles",
+        "title": "choose all applicable roles"},
+          {
+        "id": "station_dates",
+        "title": "days at the research station",
+        "items": {
+          "fields": [
+           {
+             "id": "start_date",
+             "title": "arrival date"
+           },
+           {
+             "id": "end_date",
+             "title": "departure date"
+           }
+          ]
+        }
+      }
+
+        ]
+      }
+    }]
+  },
+   {
+    "title": "Groups",
+    "fields": [{
+      "id": "groups",
+      "items": {
+        "fields": [
+          "!id",
+           {
+            "id":"number_of_persons",
+            "title": "number of persons"
+           },
           "organisation",
           {
           "id": "@country",

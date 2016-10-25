@@ -35,7 +35,7 @@
     <md-list-item class="md-2-line" ng-repeat="person in document.people">
       <md-icon class="md-avatar-icon">person</md-icon>
         <div class="md-list-item-text">
-          <h3> {{ person.first_name }} {{ person.last_name }} {{ person.number_of_persons }} </h3>
+          <h3> {{ person.first_name }} {{ person.last_name }} </h3>
           <p> {{ person.organisation }}&nbsp;{{ person.country }} </p>
           <p ng-if="person.roles"><span ng-repeat="r in person.roles">{{ r | t }}<span ng-if="!$last">, </span></span></p>
           <div ng-repeat="dates in person.station_dates">
@@ -48,7 +48,28 @@
 
  <npdc:organisations></npdc:organisations>
 
-  <!--<npdc:links links="links" ></npdc:links> -->
+
+
+<section ng-if="document.groups && document.groups.length > 0">
+  <h3>{{ 'Groups' | t }}</h3>
+  <md-divider></md-divider>
+  <md-list>
+    <md-list-item class="md-2-line" ng-repeat="group in document.groups">
+      <md-icon class="md-avatar-icon">groups</md-icon>
+        <div class="md-list-item-text">
+          <h3> {{ group.number_of_persons }} </h3>
+          <p> {{ group.organisation }}&nbsp;{{ group.country }} </p>
+          <p ng-if="group.roles"><span ng-repeat="r in group.roles">{{ r | t }}<span ng-if="!$last">, </span></span></p>
+          <div ng-repeat="dates in group.station_dates">
+           <p>{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}}</p>
+         </div>
+        </div>
+      </md-list-item>
+    </md-list>
+</section>
+
+
+
 
  <section>
   <div ng-if="links.length > 0">
