@@ -141,7 +141,7 @@
     "fields": [
        {
         "id": "draft",
-        "title": "draft (not visible to Internet users)"
+        "title": "draft (not part of statistics)"
       },
       {
         "id": "created",

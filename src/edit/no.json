@@ -217,7 +217,7 @@
       }
     },
     "draft": {
-      "title": "kladd (registrering holdes internt)",
+      "title": "kladd (er ikke del av statistikk)",
       "values": [
            "ja",
            "nei"
