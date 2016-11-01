@@ -76,14 +76,15 @@ module Couch
     end
 
      #Set server
-    host = Couch::Config::HOST2
-    port = Couch::Config::PORT2
-    user = Couch::Config::USER2
-    password = Couch::Config::PASSWORD2
+    host = Couch::Config::HOST1
+    port = Couch::Config::PORT1
+    user = Couch::Config::USER1
+    password = Couch::Config::PASSWORD1
 
 
     COUCH_DB_NAME = "station-booking"
 
+    title = ""
 
     # do work on files ending in .xls in the desired directory
     Dir.glob('./excel_download/start/*.xlsx') do |excel_file|
@@ -100,34 +101,37 @@ module Couch
 
      people = Array.new
 
+     #Get ready to put into database
+     server = Couch::Server.new(host, port)
+
      #Count down the lines
-     while (line < (s.last_row).to_i)
+     while (line < ((s.last_row).to_i + 2))
 
-             #Every time - get the person
-             @people = Object.new
-             @people = {
-                :first_name =>  s.cell(line,3),
-                :last_name =>   s.cell(line,3)
-               # :organisation => s.cell(4,11),
-               # :roles => s.cell(line,8)
-             }  #end people
+          #puts "count" + line.to_s
+
+           #First check if new project
+           #Last part of if corresponds to last entry in excel form
+           if (((s.cell(line,2)) != nil) && @people)  || (line > (s.last_row).to_i)
+              #Fetch a UUID from courchdb
+
+                  res = server.get("/_uuids")
 
 
-                  #Add people to people array
-                  people.push(@people)
+                  #Extract the UUID from reply
+                  uuid = (res.body).split('"')[3]
 
-            #If new project
-            if (s.cell(line,2)) != nil
-
-                  #Get new title
-                  title = s.cell(line,2)
+                  #Convert UUID to RFC UUID
+                  uuid.insert 8, "-"
+                  uuid.insert 13, "-"
+                  uuid.insert 18, "-"
+                  uuid.insert 23, "-"
 
                   #Create entry
                   @entry = {
                     :id => uuid,
                     :_id => uuid,
-                    :schema => 'http://api.npolar.no/schema/' + Couch::Config::COUCH_DB_NAME + '.json',
-                    :collection => Couch::Config::COUCH_DB_NAME,
+                    :schema => 'http://api.npolar.no/schema/' + COUCH_DB_NAME + '.json',
+                    :collection => COUCH_DB_NAME,
                     :base => 'http://api.npolar.no',
                     :lang => 'en',
                     :draft => 'yes',
@@ -137,22 +141,68 @@ module Couch
                     :people => people,
                     :created_by => user,
                     :created => timestamp
+                 }
+
+                  puts @entry
 
                   #Get new array
                   people = Array.new
+                  title = ''
 
                   #Push entry to Couch database
                   doc = @entry.to_json
-                  res = server.post("/"+ Couch::Config::COUCH_DB_NAME + "/", doc, user, password)
-
-            end #if
+                  res = server.post("/"+ COUCH_DB_NAME + "/", doc, user, password)
 
 
-          puts(s.cell(line,2))
-          puts(s.cell(line,3))
-          puts(s.cell(line,8))
+          end #if
 
-          line = line+1
+
+
+            #Now need to count up all people
+            #Every time - get the person
+                  @people = Object.new
+                  if (s.cell(line,3) != nil)
+                      full_name = s.cell(line,3)
+                      name = full_name.split(" ")
+                      case name.length
+                      when 1
+                          first_name = ""
+                          last_name = name[0]
+                      when 2
+                          first_name = name[0]
+                          last_name = name[1]
+                      when 3
+                          first_name = name[0] + ' ' + name[1]
+                          last_name = name[2]
+                      when 4
+                          first_name = name[0] + ' ' + name[1]
+                          last_name = name[2]
+                      else
+                          first_name = name[0] + ' ' + name[1]
+                          last_name = name.drop(2)
+                      end
+
+                      @people = {
+                          :first_name =>  first_name,
+                          :last_name =>   last_name
+                         # :organisation => s.cell(4,11),
+                         # :roles => s.cell(line,8)
+                      }  #end people
+
+
+                      #Add people to people array
+                      people.push(@people)
+                  end
+
+
+
+                  #If new project
+                  if (s.cell(line,2)) != nil
+                      #Get new title
+                      title = s.cell(line,2)
+                  end
+
+                  line = line+1
 
   end #while
 end #excel_file
