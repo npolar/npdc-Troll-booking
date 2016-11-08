@@ -1,2 +1,2 @@
 # npdc-station-booking
-Statistics for all persons booked into Troll and Norwegia research station in Antarctica.
+Statistics for personnel booked into Troll and Sverdrup research stations in Antarctica/Svalbard.
