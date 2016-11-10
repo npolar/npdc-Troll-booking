@@ -1,80 +1,107 @@
-Login
-To enter a new entry in the database or to edit a draft entry, start by logging in to https://data.npolar.no/station-booking. Use the "user menu" button located in the upper right corner (se picture below) XXXXXXXXX. If you do not have a data.npolar.no account, choose the "user menu" icon, write your e-mail address and choose the "email code"-button. You should then receive a one-time password and a link to update your password by email. If you know your login name but have forgotten your password,
-you can also use the button "email code". To see if you are really logged in, hover the mouse over the "user menu"-icon. If you are logged in, you will see your name instead of "user menu".
+#Background
+The Norwegian Polar Institute Station Database is a tool for keeping track of NPI’s visits to the two permanent research stations: Troll Research Station in Dronning Maud Land, and Sverdrup Research Station in Ny-Ålesund, Svalbard. The database will be the basis when reporting to our owners, Office of the Auditor General in Norway (Riksrevisjonen) and others asking about our activities.
 
-If you do not see any green buttons to the right at all when you should be logged in, you are either not logged in or something is wrong. By hovering over the "user menu" button, you should see your login name as a check. If you only see "User menu", try to log in again. If you still do not succeed, contact mms@npolar.no.
+OLA will be responsible for completing the fields for Troll, while the information for Sverdrup will be harvested from the Research In Svalbard (RiS database). All fields in the database should be completed as long as they are relevant for the activity. The databases will be for internal use, but statistics will be publicly available.
 
-Language
+
+#Login
+To enter a new entry in the database or to edit a draft entry, start by logging in to
+[Norwegian Polar Institute Station Database](https://data.npolar.no/station-booking). Use the "user menu" button located in the upper right corner (se picture below).
+
+[[https://github.com/npolar/npdc-station-booking/blob/master/docs/login_detail.png|alt="How to login"]]
+
+If you do not have a data.npolar.no account, choose the "user menu" icon, write your e-mail address and choose the "email code"-button. You should then receive a one-time password and a link to update your password by email. If you know your login name but have forgotten your password,
+you can also use the button "email code".
+
+If you do not see any green buttons to the right at all when you should be logged in, you are either not logged in or something is wrong. By hovering over the "user menu" button, you should see your login name as a check. If you only see "User menu", try to log in again. If you still do not succeed, [contact us](https://github.com/npolar/npdc-station-booking/wiki/helpfile#contact).
+
+#Language
 We are trying to keep the database in English, but if you want Norwegian texts, you can use "Usermenu" and select "English" at the bottom of the menu. Then you will be able to switch to Norwegian texts.
 
-Get started
-Go to the homepage, https://data.npolar.no/station-booking. To enter a new entry, choose "New", the green "+"-icon button in the top right corner (see screenshot below) XXXXXX.
+[[https://github.com/npolar/npdc-station-booking/blob/master/docs/language_detail.png|alt="Change language"]]
+
+#Get started
+Go to the homepage, [[<a href="https://data.npolar.no/station-booking" target="_blank">Station booking statistics</a>]]. To enter a new entry, choose "New", the green "+"-icon button in the top right corner (see screenshot below).
+
+[[https://github.com/npolar/npdc-station-booking/blob/master/docs/new_detail.png|alt="Use new button"]]
 
 To edit an existing record not yet submitted, select the entry and open the listing for this entry. Choose "Edit”, the green button in the right corner with a pencil-icon. When you are on the edit page, you can save your data by using the green "Save" button to the right with a disk symbol.
+
+[[https://github.com/npolar/npdc-station-booking/blob/master/docs/save_detail.png|alt="Use save button"]]
 
 You can switch between tabs as you wish without saving, but you should save from time to time not to loose data. After you have saved the information, the first tab page will appear again.
 
 On the last tab, "Edits", when you set "draft (not visible to Internet users)" to "no" and save, the entry will be included in the statistics. If set to "yes" the entry will not be a part of the statistics.
 
 
-Tabs
+#Tabs
 
-Core
-Research project title or other title: Write the project name or alternatively a short title describing the activity f.ex. "VIP guests from the Ministry of Climate and Environment visiting spring 2016"
+##Core
+**Research project title or other title:** Write the project name or alternatively a short title describing the activity f.ex. "VIP guests from the Ministry of Climate and Environment visiting"
 
-Research station: Choose between Troll, Norvegia og Sverdrup research station
+Please pay extra attention when making the title. Make a title that is understandable to everybody, and avoid abbreviations.
 
-Type of research: Select from the list.
+**Research station:** Choose between Troll and Sverdrup Research Station.
 
-Summary: Write a short summary of the activity.
+**Type of research:** Select from the list.
 
-Topics: select all the topics that applies.
+**Summary:** Write a short summary of the activity.
 
-Group stay dates: The date the first person in the group arroved and the date the last person in the group departed. Alternatively, if the group arrived and then went into the field and later came back, write the dates they were at the research station only in two different date entries.
+**Topics:** select all the topics that applies.
 
-People
+**Group stay dates:** The date the first person in the group arroved and the date the last person in the group departed. Alternatively, if the group arrived and then went into the field and later came back, write the dates they were at the research station only in two different date entries.
 
-First name/Last name: Register the name of the person, typically this is the researcher of staff/logistics operations.
+##People
+Choose between the PEOPLE tab or the GROUP tab.
 
-Organisation: List the person's organisation.
+Demanded field means that we would like you to fill in the field for the statistics, but it will not be registered as an error if not filled in.
 
-Country: List the person's country.
+**First name/Last name:** Register the name of the person, typically this is the researcher of staff/logistics operations.
 
-Choose all application roles: choose all the roles that apply for the person.
+**Organisation:** List the person's organisation. Organizations also have autocomplete, so be careful when typing to choose the correct organization if it is available. Avoid abbreviations.
 
-Days at the research station: Register the arrival and departure date of the person. If the person leaves f.ex. on a field trip and returns later, it should be registered twice - first arrival and departure date and last arrival and departure date.
+**Country:** List the person's country.
 
-Groups
-For non-scientists such as f.ex. VIP groups it is not necessary to be specific about the names. Then use the group tab instead of the people tab.
+**Choose all application roles:** choose all the roles that apply for the person.
 
-Number of persons: The number of persons in the group, f.ex. 7.
+**Days at the research station:**
+Leave "accomodation" unchecked if the persons require logistics support and meals but not overnight stay. Register the arrival and departure date of the person. If the person leaves f.ex. on a field trip and returns later, it should be registered twice - first arrival and departure date and last arrival and departure date.
 
-Organisation: Name their organisation. If you f.ex. have 3 persons from the Ministry of Climate and Environment and 4 from NPI, split the group in two and register the people fron the Ministry of Climate and Environment separately from the NPI staff.
+##Groups
+Choose between the PEOPLE tab or the GROUPS tab. For non-scientists such as f.ex. VIP groups it is not necessary to be specific about the names, thus use the Groups tab.
 
-Country: Similarly, register the organisation's country.
+Demanded field means that we would like you to fill in the field for the statistics, but it will not be registered as an error if not filled in.
 
-Choose all application roles: Choose all the roles that apply within the group.
+**Number of persons:** The number of persons in the group, f.ex. 7.
 
-Days at the research station: Register the arrival and departure date of the group. If the group is split between several different dates, you must split the group in individual entries as well.
+**Organisation:** Name their organisation. If you f.ex. have 3 persons from the Ministry of Climate and Environment and 4 from NPI, split the group in two and register the people from the Ministry of Climate and Environment separately from the NPI staff.
 
+**Country:** Similarly, register the organisation's country.
 
-Links
-Relation between this registration and the link: Here you should add links to a project registered in the project database or alternatively a link to an external database. You could also link to a dataset, a larger research program to which the visitors belong or the registered expedition.
+**Choose all application roles:** Choose all the roles that apply within the group.
 
-Link: Include the link itself. Remember to include protocol, such as "http://"" or "https://"" or "ftp://"" before the link itself. The link is autogenerated in the entry listing page, so if you do not include the protocol, it will not work in the listing.
-
-Link title: Write a fitting title for the link f.ex. "ICE Ice rises project"
+**Days at the research station:** Leave "accomodation" unchecked if the group require logistics support and meals but not overnight stay. Register the arrival and departure date of the group. If the group is split between several different dates, you must split the group in individual entries as well.
 
 
-Edits
-Draft (not visible to Internet users): When set to "yes" the entry will not be a part of the statistics.
+##Links
+Demanded field means that we would like you to fill in the field for the statistics, but it will not be registered as an error if not filled in.
 
-Created, created by, updated, updated by: These fields are updated automatically and only included to
+**Relation between this registration and the link:** Here you should add links to a project registered in the project database or alternatively a link to an external database. You could also link to a dataset, a larger research program to which the visitors belong or the registered expedition.
+
+**Link:** Include the link itself. Remember to include protocol, such as "http://"" or "https://"" or "ftp://"" before the link itself. The link is autogenerated in the entry listing page, so if you do not include the protocol, it will not work in the listing.
+
+**Link title:** Write a fitting title for the link f.ex. "ICE Ice rises project"
+
+
+##Edits
+**Draft (not visible to Internet users):** When set to "yes" the entry will not be a part of the statistics.
+
+**Created, created by, updated, updated by:** These fields are updated automatically and only included to
 show who added the entry in case you need to contact them if something is wrong f.ex.
 
-Comment for major registration updates: Here you should add big changes to an entry, f.ex. if you found out that more people than you first registered actually came and you had to alter the entry  and thus also the statistics afterwards.
+**Comment for major registration updates:** Here you should add big changes to an entry, f.ex. if you found out that more people than you first registered actually came and you had to alter the entry  and thus also the statistics afterwards.
 
+##Contact
+<a href="mailto:siri.uldal@npolar.no" onmouseover="this.href=this.href.replace(/x/g,'');">Siri Uldal</a> Environmental Data Section (technical)
 
-
-
-
+<a href="mailto:christina.pedersen@npolar.no" onmouseover="this.href=this.href.replace(/x/g,'');">Christina A. Pedersen</a> Research Department (content issues)

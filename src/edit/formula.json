@@ -22,10 +22,10 @@
         "items": {
           "fields": [{
             "id": "start_date",
-            "title":"arrival date (demanded field)"
+            "title":"arrival date (required)"
             },{
             "id": "end_date",
-            "title":"departure date (demanded field)"
+            "title":"departure date (required)"
           }
           ]
         }
@@ -40,21 +40,21 @@
           "!id",
            {
             "id": "first_name",
-            "title": "first name (demanded field)"
+            "title": "first name (required)"
           }, {
             "id": "last_name",
-            "title": "last name (demanded field)"
+            "title": "last name (required)"
           },
            {
             "id":"organisation",
-            "title": "organisation (demanded field)"
+            "title": "organisation (required)"
            },
           {
           "id": "@country",
-          "title": "country (demanded field)"},
+          "title": "country (required)"},
           {
         "id": "roles",
-        "title": "choose all applicable roles (demanded field)"},
+        "title": "choose all applicable roles (required)"},
           {
         "id": "station_dates",
         "title": "days at the research station",
@@ -62,15 +62,15 @@
           "fields": [
           {
               "id":"accomodation",
-              "title":"accomodation (demanded field)"
+              "title":"accomodation included (required)"
            },
            {
              "id": "start_date",
-             "title": "arrival date (demanded field)"
+             "title": "arrival date (required)"
            },
            {
              "id": "end_date",
-             "title": "departure date (demanded field)"
+             "title": "departure date (required)"
            }
           ]
         }
@@ -89,18 +89,18 @@
           "!id",
            {
             "id":"number_of_persons",
-            "title": "number of persons (demanded field)"
+            "title": "number of persons (required)"
            },
            {
             "id":"organisation",
-            "title": "organisation (demanded field)"
+            "title": "organisation (required)"
            },
           {
           "id": "@country",
-          "title": "country (demanded field)"},
+          "title": "country (required)"},
           {
         "id": "roles",
-        "title": "choose all applicable roles (demanded field)"},
+        "title": "choose all applicable roles (required)"},
           {
         "id": "station_dates",
         "title": "days at the research station",
@@ -108,15 +108,15 @@
           "fields": [
           {
               "id":"accomodation",
-              "title": "accomodation (demanded field)"
+              "title": "accomodation included (required)"
            },
            {
              "id": "start_date",
-             "title": "arrival date (demanded field)"
+             "title": "arrival date (required)"
            },
            {
              "id": "end_date",
-             "title": "departure date (demanded field)"
+             "title": "departure date (required)"
            }
           ]
         }
@@ -133,18 +133,18 @@
         "items": {
           "fields": [ {
             "id": "href",
-            "title": "link (please include protocol f.ex. 'http://' as in link http://www.npolar.no)(demanded field)"
+            "title": "link (please include protocol f.ex. 'http://' as in link http://www.npolar.no)(required)"
           },
           {
             "id": "rel",
-            "title": "relation between this registration and the link (demanded field)"
+            "title": "relation between this registration and the link (required)"
           },
         "!hreflang",
         "!type",
         "!length",
         {
           "id": "title",
-          "title": "link title (demanded field)"
+          "title": "link title (required)"
         }
           ]
         }

@@ -39,7 +39,7 @@ var StationBookingEditController = function($scope, $controller, $routeParams, S
     value: 'code'
   }, $scope.formula);
 
-  let autocompleteFacets = ["people.first_name", "people.last_name", "people.organisation"];
+  let autocompleteFacets = ["people.first_name", "people.last_name", "people.organisation", "groups.organisation"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, StationBooking, $scope.formula);
 
 

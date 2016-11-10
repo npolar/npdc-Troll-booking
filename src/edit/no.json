@@ -11,7 +11,6 @@
       "title": "forskningsstasjon",
        "values": [
         "Troll",
-        "Norvegia",
         "Sverdrup"
       ]
     },
@@ -73,10 +72,10 @@
       "items": {
         "fields": {
           "start_date": {
-           "title":"ankomst dato (ønsket felt)"
+           "title":"ankomst dato (påkrevd)"
           },
           "end_date": {
-           "title":"avreise dato (ønsket felt)"
+           "title":"avreise dato (påkrevd)"
           }
         }
       }
@@ -89,10 +88,10 @@
       "items": {
         "fields": {
           "href":{
-            "title":"weblenke inkludert protokoll (f.eks. http:// som i lenken http://www.npolar.no)(ønsket felt)"
+            "title":"weblenke inkludert protokoll (f.eks. http:// som i lenken http://www.npolar.no)(påkrevd)"
           },
           "rel": {
-            "title": "lenke type (forbindelse mellom denne registreringen og lenke)(ønsket felt)",
+            "title": "lenke type (forbindelse mellom denne registreringen og lenke)(påkrevd)",
             "values": [
                "",
               "program",
@@ -102,7 +101,7 @@
               ]
           },
           "title": {
-            "title": "tittel på lenke (ønsket felt)"
+            "title": "tittel på lenke (påkrevd)"
           }
         }
       }
@@ -112,13 +111,13 @@
       "items": {
         "fields": {
           "first_name": {
-            "title": "fornavn (ønsket felt)"
+            "title": "fornavn (påkrevd)"
           },
           "last_name": {
-            "title": "etternavn (ønsket felt)"
+            "title": "etternavn (påkrevd)"
           },
           "roles": {
-            "title": "roller (velg alle aktuelle)(ønsket felt)",
+            "title": "roller (velg alle aktuelle)(påkrevd)",
             "values": [
               "snekker",
               "kokk",
@@ -146,22 +145,22 @@
       "items": {
         "fields": {
            "accomodation": {
-           "title":"overnatting inkludert (ønsket felt)"
+           "title":"overnatting inkludert (påkrevd)"
           },
           "start_date": {
-           "title":"ankomst dato (ønsket felt)"
+           "title":"ankomst dato (påkrevd)"
           },
           "end_date": {
-           "title":"avreise dato (ønsket felt)"
+           "title":"avreise dato (påkrevd)"
           }
         }
       }
       },
           "organisation": {
-            "title": "organisasjon (ønsket felt)"
+            "title": "organisasjon (påkrevd)"
           },
           "@country":{
-            "title": "land (ønsket felt)"
+            "title": "land (påkrevd)"
           }
         }
       }
@@ -171,10 +170,10 @@
       "items": {
         "fields": {
           "number_of_persons": {
-            "title": "antall personer (ønsket felt)"
+            "title": "antall personer (påkrevd)"
           },
           "roles": {
-            "title": "roller (velg alle aktuelle)(ønsket felt)",
+            "title": "roller (velg alle aktuelle)(påkrevd)",
             "values": [
               "snekker",
               "kokk",
@@ -198,26 +197,26 @@
             ]
           },
             "station_dates": {
-      "title":"døgn på forskningstasjonen (ønsket felt)",
+      "title":"døgn på forskningstasjonen (påkrevd)",
       "items": {
         "fields": {
           "accomodation": {
-           "title":"overnatting inkludert (ønsket felt)"
+           "title":"overnatting inkludert (påkrevd)"
           },
           "start_date": {
-           "title":"ankomst dato (ønsket felt)"
+           "title":"ankomst dato (påkrevd)"
           },
           "end_date": {
-           "title":"avreise dato (ønsket felt)"
+           "title":"avreise dato (påkrevd)"
           }
         }
       }
       },
           "organisation": {
-            "title": "organisasjon (ønsket felt)"
+            "title": "organisasjon (påkrevd)"
           },
           "@country":{
-            "title": "land (ønsket felt)"
+            "title": "land (påkrevd)"
           }
         }
       }
