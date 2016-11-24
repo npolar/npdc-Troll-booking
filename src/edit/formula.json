@@ -18,7 +18,7 @@
       "topics",
       {
         "id": "stay_dates",
-        "title":"group stay dates",
+        "title":"group stay dates (required)",
         "items": {
           "fields": [{
             "id": "start_date",
@@ -57,7 +57,7 @@
         "title": "choose all applicable roles (required)"},
           {
         "id": "station_dates",
-        "title": "days at the research station",
+        "title": "days at the research station (required)",
         "items": {
           "fields": [
           {
@@ -103,7 +103,7 @@
         "title": "choose all applicable roles (required)"},
           {
         "id": "station_dates",
-        "title": "days at the research station",
+        "title": "days at the research station (required)",
         "items": {
           "fields": [
           {

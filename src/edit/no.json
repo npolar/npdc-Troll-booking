@@ -68,7 +68,7 @@
       ]
     },
     "stay_dates": {
-      "title":"gruppe oppholdsdatoer",
+      "title":"gruppe oppholdsdatoer (påkrevd)",
       "items": {
         "fields": {
           "start_date": {
@@ -141,7 +141,7 @@
             ]
           },
             "station_dates": {
-      "title":"døgn på forskningstasjonen",
+      "title":"døgn på forskningstasjonen (påkrevd)",
       "items": {
         "fields": {
            "accomodation": {
