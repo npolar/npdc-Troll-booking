@@ -60,7 +60,7 @@
         "fields": {
           "roles": {
             "values": [
-             "carpenter",
+                "carpenter",
                 "chef",
                 "electrician",
                 "expedition leader",
@@ -74,9 +74,9 @@
                 "other",
                 "physician",
                 "pilot",
-                "research technitian",
+                "research technician",
                 "security",
-                "service technitian",
+                "service technician",
                 "transport",
                 "VIP"
             ]

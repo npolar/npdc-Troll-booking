@@ -2,7 +2,7 @@
   "fieldsets" : [
     "Kjernedata",
     "Personer",
-    "Grupper",
+    "Gjester",
     "Lenker",
     "Endringer"
   ],
@@ -166,7 +166,7 @@
       }
     },
      "groups": {
-      "title": "grupper",
+      "title": "gjester",
       "items": {
         "fields": {
           "number_of_persons": {
