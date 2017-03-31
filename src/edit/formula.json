@@ -84,6 +84,7 @@
     "title": "Guests",
     "fields": [{
       "id": "groups",
+      "title": "guests",
       "items": {
         "fields": [
           "!id",
